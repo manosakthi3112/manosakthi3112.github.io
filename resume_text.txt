@@ -1,0 +1,119 @@
+Manosakthi Thiyagarajan
+(91+) 9361043465
+—
+manot6114@gmail.com
+LinkedIn
+—
+GitHub
+—
+LeetCode
+—
+Portfolio
+12/190 Sree Selva Ganapathi Nagar, Makkinampatti, Pollachi, 642003
+Education
+B.Tech in Artificial Intelligence & Data Science
+P.A. College of Engineering and Technology, Pollachi
+GPA: 8.9 — June 2022 - Expected May 2026
+Skills
+Programming:
+Python,C, Java, MySQL,MongoDb, HTML, CSS, React Js
+Machine Learning:
+TensorFlow, CNN, LSTM, NLP
+Tools:
+Data Visualization, API Integration, Flask, AR/VR
+Soft Skills:
+Leadership, Agile Development, Problem-Solving
+Work Experience
+Robotics and AI Intern – iHub School of Learning, Coimbatore
+April 2025 – May 2025
+• Worked on integrating sensor data for robotic control systems using Python.
+• Assisted in developing AI algorithms for object detection and obstacle avoidance.
+• Simulated robotic movements and path planning using ROS (Robot Operating System).
+• Contributed to training and testing deep learning models for robotic vision tasks.
+• Worked as a freelancer, contributing to the organization and coordination of events, workshops, and
+seminars.
+Data Science Intern – Neha Solutions, Pollachi
+June 2024 – July 2024
+• Developed Python-based data pipelines for data cleaning and analysis.
+• Applied machine learning algorithms for predictive modeling.
+• Created data visualizations using Matplotlib and Seaborn.
+• Optimized SQL queries for improved database performance.
+Machine Learning Intern – Live Stream Technologies, Coimbatore
+Oct 2024 – Nov 2024
+• Developed and trained machine learning models for predictive analytics.
+• Applied CNN and LSTM algorithms for image and time-series data processing.
+• Improved model accuracy by fine-tuning hyperparameters and optimizing data pipelines.
+• Implemented NLP-based solutions for text analysis.
+Projects
+• Sign Language Detection using CNN — Implemented a CNN-based real-time gesture recognition
+system for accurate sign language interpretation.
+• AI Learning App for Deaf and Mute — Developed an AI-powered educational platform enabling
+sign-based learning and interaction.
+• Retinoblastoma Detection using Deep Learning — Applied 3-layer image preprocessing and
+trained an EfficientNet-based CNN for accurate retinal image classification.
+• AI MCQ Generator — Built an automated MCQ generation system using Transformer-based NLP
+models.
+1
+• Notes App for Free-Form Writing — Developed a React Native and Flask-based notes app using
+Phi-3 via Ollama for local LLM inference and knowledge graph generation.
+• Expense App — Built a mobile expense tracker using LLaMA-2 (Ollama) for SMS transaction
+extraction with analytics and manual data entry.
+• Bird Detection and Tracking — Implemented YOLO-based bird detection and direction tracking
+with EfficientNet-based species classification.
+• Stock Prediction with LSTM — Developed an LSTM-based time-series model for stock price
+forecasting.
+• 3D Shirt Mockup & Template Designer — Created an interactive 3D garment configurator with
+design customization and demand forecasting.
+• Certificate & Email Automation — Automated bulk certificate generation and email distribution
+using Python.
+• Bulk WhatsApp Sender — Developed an automation tool for sending bulk WhatsApp messages
+with media support.
+• HealthHubAI — Built an AI-driven fitness platform providing workout and diet recommendations.
+• Flower Shop Manager — Developed a Flask-based shop management system for inventory and
+order handling.
+• News Webpage — Implemented a real-time news scraping and display system using Flask.
+• Expense Tracker Webpage — Built a web-based expense analysis platform using Flask and Mon-
+goDB.
+• WhatsApp Auto Messenger — Implemented a scheduled WhatsApp messaging automation tool
+using Python.
+• Stock Info Page — Developed a live stock market dashboard using Flask APIs.
+Leadership & Responsibilities
+• Secretary, Association of Artificial Intelligence & Data Science (July 2024 – Present)
+• Additional Secretary, Association of Science and Humanities(July 2022 - May 2023)
+• Executive Member, Association of Computer Science & Engineering (June 2023 - May 2024)
+• Executive Member, ISTE (August 2023)
+• Executive Member, Entrepreneur Development Cell (June 2022)
+Certifications
+Feb 2025
+Introduction to Data Science – Cisco Networking Academy
+Apr 2023
+Python (Basic) – HackerRank
+Jan 2025
+Winter Coding Challenge – GeeksForGeeks
+Feb 2024
+Workshop on Data Visualization with Python – LetsUpgrade
+Oct 2023
+Python – GUVI
+Oct 2023
+SQL and Relational Database – Cognitive Class.AI
+Nov 2023
+Basics of Python – Infosys Springboard
+Dec 2024
+Master MongoDB for Python – GUVI
+June 2024
+Master Data Management for Beginners – TCS iON
+June 2024
+Python Essentials – Cisco Networking Academy
+2
+Achievements & Awards
+• 1st Prize in Paper Presentation, KPR Institute of Engineering (Nov 2022)
+• Finalist in YESIST12, IEEE Tunisia Section (Sep 2024)
+• Finalist in Hackathon Hackfest 2.0, CMR College of Engineering and Technology (Feb 2025)
+• Finalist in Hackathon H! Hacks 2.0, Anna University (Feb 2025)
+• Secured Top 16 in Hackathon Code Fusion 2.0, University Institute of Engineering, Chandigarh (Jan
+2025)
+• Secured Top 22 in Neural Nexus’24 - AI/ML Hackathon, Vijaybhoomi University (Dec 2024)
+• Secured Top 20 in Convolve 3.0: A Pan IIT AI/ML Hackathon, IIT Guwahati (Dec 2024)
+• 3rd Prize in Paper Presentation, Pollachi Institute of Engineering (April 2023)
+• Finalist in Quiz Prometeo’25, IIT Jodhpur (Jan 2025)
+3
