@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manosakthi Thiyagarajan | AI & Data Science Engineer</title>
+    <meta name="description"
+        content="Portfolio of Manosakthi Thiyagarajan - AI & Data Science Engineer specializing in Machine Learning, Deep Learning, and Full-Stack Development.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-text">MT</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge animate-fade-in">
+                <i class="fas fa-robot"></i>
+                <span>AI & Data Science Engineer</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="greeting">Hello, I'm</span>
+                <span class="name">Manosakthi Thiyagarajan</span>
+            </h1>
+            <p class="hero-subtitle animate-fade-in-delay">
+                Crafting intelligent solutions through <span class="highlight">Machine Learning</span>,
+                <span class="highlight">Deep Learning</span>, and <span class="highlight">Full-Stack Development</span>
+            </p>
+            <div class="hero-stats animate-fade-in-delay-2">
+                <div class="stat stat-animate">
+                    <span class="stat-number" data-count="20">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat stat-animate">
+                    <span class="stat-number" data-count="3">0</span>
+                    <span class="stat-label">Internships</span>
+                </div>
+                <div class="stat stat-animate">
+                    <span class="stat-number" data-count="30">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Certifications</span>
+                </div>
+            </div>
+            <div class="hero-cta animate-fade-in-delay-2">
+                <a href="#projects" class="btn btn-primary">
+                    <span>View My Work</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Get In Touch</span>
+                </a>
+            </div>
+            <div class="hero-socials animate-fade-in-delay-3">
+                <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://leetcode.com" target="_blank" class="social-link" aria-label="LeetCode">
+                    <i class="fas fa-code"></i>
+                </a>
+                <a href="mailto:manot6114@gmail.com" class="social-link" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Passionate About AI & Innovation</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-content reveal">
+                    <p class="about-text">
+                        I'm a <strong>B.Tech student in Artificial Intelligence & Data Science</strong> at P.A. College
+                        of Engineering and Technology, Pollachi, with a <strong>GPA of 8.9</strong>. My passion lies in
+                        developing intelligent systems that solve real-world problems.
+                    </p>
+                    <p class="about-text">
+                        From building <strong>sign language detection systems</strong> to creating <strong>AI-powered
+                            educational platforms</strong>, I thrive on pushing the boundaries of what's possible with
+                        machine learning and deep learning technologies.
+                    </p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <span class="info-label">Education</span>
+                                <span class="info-value">B.Tech AI & Data Science</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-university"></i>
+                            <div>
+                                <span class="info-label">University</span>
+                                <span class="info-value">PACET, Pollachi</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <span class="info-label">GPA</span>
+                                <span class="info-value">8.9 / 10</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <span class="info-label">Expected Graduation</span>
+                                <span class="info-value">May 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-container reveal">
+                    <h3 class="skills-title">Technical Arsenal</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4><i class="fas fa-code"></i> Programming</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">C</span>
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">React JS</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-brain"></i> Machine Learning</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag">CNN</span>
+                                <span class="skill-tag">LSTM</span>
+                                <span class="skill-tag">NLP</span>
+                                <span class="skill-tag">YOLO</span>
+                                <span class="skill-tag">EfficientNet</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-tools"></i> Tools & Frameworks</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Flask</span>
+                                <span class="skill-tag">React Native</span>
+                                <span class="skill-tag">AR/VR</span>
+                                <span class="skill-tag">API Integration</span>
+                                <span class="skill-tag">ROS</span>
+                                <span class="skill-tag">Data Visualization</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-users"></i> Soft Skills</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Leadership</span>
+                                <span class="skill-tag">Agile Development</span>
+                                <span class="skill-tag">Problem-Solving</span>
+                                <span class="skill-tag">Team Collaboration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Career Journey</span>
+                <h2 class="section-title">Work Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-header">
+                            <h3>Robotics and AI Intern</h3>
+                            <span class="company">iHub School of Learning, Coimbatore</span>
+                        </div>
+                        <span class="timeline-date">
+                            <i class="fas fa-calendar"></i> April 2025 – May 2025
+                        </span>
+                        <ul class="timeline-list">
+                            <li>Integrated sensor data for robotic control systems using Python</li>
+                            <li>Developed AI algorithms for object detection and obstacle avoidance</li>
+                            <li>Simulated robotic movements and path planning using ROS</li>
+                            <li>Trained and tested deep learning models for robotic vision tasks</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Python</span>
+                            <span>ROS</span>
+                            <span>Deep Learning</span>
+                            <span>Computer Vision</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-header">
+                            <h3>Machine Learning Intern</h3>
+                            <span class="company">Live Stream Technologies, Coimbatore</span>
+                        </div>
+                        <span class="timeline-date">
+                            <i class="fas fa-calendar"></i> Oct 2024 – Nov 2024
+                        </span>
+                        <ul class="timeline-list">
+                            <li>Developed and trained machine learning models for predictive analytics</li>
+                            <li>Applied CNN and LSTM algorithms for image and time-series data processing</li>
+                            <li>Improved model accuracy by fine-tuning hyperparameters</li>
+                            <li>Implemented NLP-based solutions for text analysis</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>CNN</span>
+                            <span>LSTM</span>
+                            <span>NLP</span>
+                            <span>Predictive Analytics</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-header">
+                            <h3>Data Science Intern</h3>
+                            <span class="company">Neha Solutions, Pollachi</span>
+                        </div>
+                        <span class="timeline-date">
+                            <i class="fas fa-calendar"></i> June 2024 – July 2024
+                        </span>
+                        <ul class="timeline-list">
+                            <li>Developed Python-based data pipelines for data cleaning and analysis</li>
+                            <li>Applied machine learning algorithms for predictive modeling</li>
+                            <li>Created data visualizations using Matplotlib and Seaborn</li>
+                            <li>Optimized SQL queries for improved database performance</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Python</span>
+                            <span>SQL</span>
+                            <span>Matplotlib</span>
+                            <span>Data Pipelines</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="section leadership">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Leadership</span>
+                <h2 class="section-title">Roles & Responsibilities</h2>
+            </div>
+            <div class="leadership-grid">
+                <div class="leadership-card glass-card reveal">
+                    <div class="leadership-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Secretary</h3>
+                    <p class="leadership-org">Association of AI & Data Science</p>
+                    <span class="leadership-date">July 2024 – Present</span>
+                </div>
+                <div class="leadership-card glass-card reveal">
+                    <div class="leadership-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Additional Secretary</h3>
+                    <p class="leadership-org">Association of Science & Humanities</p>
+                    <span class="leadership-date">July 2022 – May 2023</span>
+                </div>
+                <div class="leadership-card glass-card reveal">
+                    <div class="leadership-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3>Executive Member</h3>
+                    <p class="leadership-org">Association of CSE</p>
+                    <span class="leadership-date">June 2023 – May 2024</span>
+                </div>
+                <div class="leadership-card glass-card reveal">
+                    <div class="leadership-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Executive Member</h3>
+                    <p class="leadership-org">ISTE & EDC</p>
+                    <span class="leadership-date">2022 – 2023</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="project-filters reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai-ml">AI/ML</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="automation">Automation</button>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card glass-card reveal" data-category="ai-ml">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-icon"><i class="fas fa-hands"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sign Language Detection</h3>
+                        <p>CNN-based real-time gesture recognition system for accurate sign language interpretation</p>
+                        <div class="project-tags">
+                            <span>CNN</span>
+                            <span>TensorFlow</span>
+                            <span>OpenCV</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card glass-card reveal" data-category="ai-ml">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI Learning App for Deaf & Mute</h3>
+                        <p>AI-powered educational platform enabling sign-based learning and interaction</p>
+                        <div class="project-tags">
+                            <span>AI</span>
+                            <span>Education</span>
+                            <span>Accessibility</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card glass-card reveal" data-category="ai-ml">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-icon"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Retinoblastoma Detection</h3>
+                        <p>3-layer image preprocessing with EfficientNet-based CNN for retinal image classification</p>
+                        <div class="project-tags">
+                            <span>EfficientNet</span>
+                            <span>Medical AI</span>
+                            <span>CNN</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card glass-card reveal" data-category="ai-ml">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-icon"><i class="fas fa-question-circle"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI MCQ Generator</h3>
+                        <p>Automated MCQ generation system using Transformer-based NLP models</p>
+                        <div class="project-tags">
+                            <span>NLP</span>
+                            <span>Transformers</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-card glass-card reveal" data-category="web">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-icon"><i class="fas fa-sticky-note"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Notes App with LLM</h3>
+                        <p>React Native & Flask app using Phi-3 via Ollama for local LLM inference and knowledge graphs
+                        </p>
+                        <div class="project-tags">
+                            <span>React Native</span>
+                            <span>Flask</span>
+                            <span>LLM</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card glass-card reveal" data-category="web">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-icon"><i class="fas fa-wallet"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Expense Tracker App</h3>
+                        <p>Mobile expense tracker using LLaMA-2 for SMS transaction extraction with analytics</p>
+                        <div class="project-tags">
+                            <span>LLaMA-2</span>
+                            <span>Mobile</span>
+                            <span>Analytics</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 7 -->
+                <div class="project-card glass-card reveal" data-category="ai-ml">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-icon"><i class="fas fa-dove"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Bird Detection & Tracking</h3>
+                        <p>YOLO-based bird detection with EfficientNet species classification</p>
+                        <div class="project-tags">
+                            <span>YOLO</span>
+                            <span>EfficientNet</span>
+                            <span>Tracking</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 8 -->
+                <div class="project-card glass-card reveal" data-category="ai-ml">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Stock Prediction with LSTM</h3>
+                        <p>LSTM-based time-series model for stock price forecasting</p>
+                        <div class="project-tags">
+                            <span>LSTM</span>
+                            <span>Time Series</span>
+                            <span>Finance</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 9 -->
+                <div class="project-card glass-card reveal" data-category="web">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-icon"><i class="fas fa-tshirt"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>3D Shirt Mockup Designer</h3>
+                        <p>Interactive 3D garment configurator with design customization and demand forecasting</p>
+                        <div class="project-tags">
+                            <span>Three.js</span>
+                            <span>3D</span>
+                            <span>E-commerce</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 10 -->
+                <div class="project-card glass-card reveal" data-category="automation">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-icon"><i class="fas fa-certificate"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Certificate & Email Automation</h3>
+                        <p>Automated bulk certificate generation and email distribution using Python</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Automation</span>
+                            <span>Email</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 11 -->
+                <div class="project-card glass-card reveal" data-category="automation">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-icon"><i class="fab fa-whatsapp"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Bulk WhatsApp Sender</h3>
+                        <p>Automation tool for sending bulk WhatsApp messages with media support</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>WhatsApp API</span>
+                            <span>Automation</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 12 -->
+                <div class="project-card glass-card reveal" data-category="web">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>HealthHubAI</h3>
+                        <p>AI-driven fitness platform providing workout and diet recommendations</p>
+                        <div class="project-tags">
+                            <span>AI</span>
+                            <span>Health</span>
+                            <span>Flask</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section certifications">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Learning</span>
+                <h2 class="section-title">Certifications</h2>
+            </div>
+            <div class="certifications-grid">
+                <div class="cert-card glass-card reveal">
+                    <div class="cert-icon"><i class="fas fa-database"></i></div>
+                    <h3>Introduction to Data Science</h3>
+                    <p class="cert-issuer">Cisco Networking Academy</p>
+                    <span class="cert-date">Feb 2025</span>
+                </div>
+                <div class="cert-card glass-card reveal">
+                    <div class="cert-icon"><i class="fab fa-python"></i></div>
+                    <h3>Python (Basic)</h3>
+                    <p class="cert-issuer">HackerRank</p>
+                    <span class="cert-date">Apr 2023</span>
+                </div>
+                <div class="cert-card glass-card reveal">
+                    <div class="cert-icon"><i class="fas fa-code"></i></div>
+                    <h3>Winter Coding Challenge</h3>
+                    <p class="cert-issuer">GeeksForGeeks</p>
+                    <span class="cert-date">Jan 2025</span>
+                </div>
+                <div class="cert-card glass-card reveal">
+                    <div class="cert-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3>Data Visualization with Python</h3>
+                    <p class="cert-issuer">LetsUpgrade</p>
+                    <span class="cert-date">Feb 2024</span>
+                </div>
+                <div class="cert-card glass-card reveal">
+                    <div class="cert-icon"><i class="fab fa-python"></i></div>
+                    <h3>Python</h3>
+                    <p class="cert-issuer">GUVI</p>
+                    <span class="cert-date">Oct 2023</span>
+                </div>
+                <div class="cert-card glass-card reveal">
+                    <div class="cert-icon"><i class="fas fa-database"></i></div>
+                    <h3>SQL and Relational Database</h3>
+                    <p class="cert-issuer">Cognitive Class.AI</p>
+                    <span class="cert-date">Oct 2023</span>
+                </div>
+                <div class="cert-card glass-card reveal">
+                    <div class="cert-icon"><i class="fab fa-python"></i></div>
+                    <h3>Basics of Python</h3>
+                    <p class="cert-issuer">Infosys Springboard</p>
+                    <span class="cert-date">Nov 2023</span>
+                </div>
+                <div class="cert-card glass-card reveal">
+                    <div class="cert-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Master MongoDB for Python</h3>
+                    <p class="cert-issuer">GUVI</p>
+                    <span class="cert-date">Dec 2024</span>
+                </div>
+                <div class="cert-card glass-card reveal">
+                    <div class="cert-icon"><i class="fas fa-server"></i></div>
+                    <h3>Master Data Management</h3>
+                    <p class="cert-issuer">TCS iON</p>
+                    <span class="cert-date">June 2024</span>
+                </div>
+                <div class="cert-card glass-card reveal">
+                    <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>Python Essentials</h3>
+                    <p class="cert-issuer">Cisco Networking Academy</p>
+                    <span class="cert-date">June 2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section achievements">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Recognition</span>
+                <h2 class="section-title">Achievements & Awards</h2>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card glass-card reveal featured">
+                    <div class="achievement-badge gold">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>1st Prize - Paper Presentation</h3>
+                        <p>KPR Institute of Engineering</p>
+                        <span class="achievement-date">Nov 2022</span>
+                    </div>
+                </div>
+                <div class="achievement-card glass-card reveal">
+                    <div class="achievement-badge finalist">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Finalist - YESIST12</h3>
+                        <p>IEEE Tunisia Section</p>
+                        <span class="achievement-date">Sep 2024</span>
+                    </div>
+                </div>
+                <div class="achievement-card glass-card reveal">
+                    <div class="achievement-badge finalist">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Finalist - Hackfest 2.0</h3>
+                        <p>CMR College of Engineering</p>
+                        <span class="achievement-date">Feb 2025</span>
+                    </div>
+                </div>
+                <div class="achievement-card glass-card reveal">
+                    <div class="achievement-badge finalist">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Finalist - H! Hacks 2.0</h3>
+                        <p>Anna University</p>
+                        <span class="achievement-date">Feb 2025</span>
+                    </div>
+                </div>
+                <div class="achievement-card glass-card reveal">
+                    <div class="achievement-badge top">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Top 16 - Code Fusion 2.0</h3>
+                        <p>University Institute of Engineering, Chandigarh</p>
+                        <span class="achievement-date">Jan 2025</span>
+                    </div>
+                </div>
+                <div class="achievement-card glass-card reveal">
+                    <div class="achievement-badge top">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Top 22 - Neural Nexus'24</h3>
+                        <p>Vijaybhoomi University (AI/ML Hackathon)</p>
+                        <span class="achievement-date">Dec 2024</span>
+                    </div>
+                </div>
+                <div class="achievement-card glass-card reveal">
+                    <div class="achievement-badge top">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Top 20 - Convolve 3.0</h3>
+                        <p>IIT Guwahati (Pan IIT AI/ML Hackathon)</p>
+                        <span class="achievement-date">Dec 2024</span>
+                    </div>
+                </div>
+                <div class="achievement-card glass-card reveal">
+                    <div class="achievement-badge bronze">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>3rd Prize - Paper Presentation</h3>
+                        <p>Pollachi Institute of Engineering</p>
+                        <span class="achievement-date">April 2023</span>
+                    </div>
+                </div>
+                <div class="achievement-card glass-card reveal">
+                    <div class="achievement-badge finalist">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Finalist - Quiz Prometeo'25</h3>
+                        <p>IIT Jodhpur</p>
+                        <span class="achievement-date">Jan 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Let's Work Together</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <p class="contact-text">
+                        I'm currently looking for new opportunities and my inbox is always open.
+                        Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                    </p>
+                    <div class="contact-details">
+                        <a href="mailto:manot6114@gmail.com" class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">manot6114@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:+919361043465" class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">+91 9361043465</span>
+                            </div>
+                        </a>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">Pollachi, Tamil Nadu, India</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="https://linkedin.com" target="_blank" class="social-btn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="social-btn">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://leetcode.com" target="_blank" class="social-btn">
+                            <i class="fas fa-code"></i>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form glass-card reveal" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Your Name</label>
+                        <span class="form-line"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Your Email</label>
+                        <span class="form-line"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message">Your Message</label>
+                        <span class="form-line"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">MT</span>
+                    <p>Crafting AI Solutions</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://leetcode.com" target="_blank"><i class="fas fa-code"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Manosakthi Thiyagarajan. All rights reserved.</p>
+                <p>Built with <i class="fas fa-heart"></i> and lots of coffee</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
