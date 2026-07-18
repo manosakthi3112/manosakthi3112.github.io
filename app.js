@@ -1,7 +1,6 @@
-// Initialize Icons
 lucide.createIcons();
 
-// --- LENIS SMOOTH SCROLL ---
+/* ===== LENIS SMOOTH SCROLL ===== */
 const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -20,8 +19,7 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-
-// --- CUSTOM CURSOR & MAGNETIC EFFECT ---
+/* ===== CUSTOM CURSOR & MAGNETIC EFFECT ===== */
 const cursorDot = document.querySelector('.cursor-dot');
 const cursorOutline = document.querySelector('.cursor-outline');
 const magneticElements = document.querySelectorAll('.magnetic');
@@ -43,7 +41,7 @@ magneticElements.forEach((el) => {
     el.addEventListener('mouseenter', () => {
         document.body.classList.add('cursor-hover');
     });
-    
+
     el.addEventListener('mouseleave', () => {
         document.body.classList.remove('cursor-hover');
         gsap.to(el, { x: 0, y: 0, duration: 0.8, ease: "elastic.out(1, 0.3)" });
@@ -53,17 +51,17 @@ magneticElements.forEach((el) => {
         const rect = el.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-        
+
         gsap.to(el, {
-            x: x * 0.4,
-            y: y * 0.4,
+            x: x * 0.3,
+            y: y * 0.3,
             duration: 0.4,
             ease: "power2.out"
         });
     });
 });
 
-// --- 3D TILT EFFECT FOR PROJECT CARDS ---
+/* ===== 3D TILT EFFECT ===== */
 const tiltCards = document.querySelectorAll('.tilt-card');
 
 tiltCards.forEach((card) => {
@@ -71,13 +69,11 @@ tiltCards.forEach((card) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        
-        const rotateX = ((y - centerY) / centerY) * -12;
-        const rotateY = ((x - centerX) / centerX) * 12;
-        
+        const rotateX = ((y - centerY) / centerY) * -10;
+        const rotateY = ((x - centerX) / centerX) * 10;
+
         gsap.to(card, {
             rotateX: rotateX,
             rotateY: rotateY,
@@ -86,7 +82,7 @@ tiltCards.forEach((card) => {
             ease: "power2.out"
         });
     });
-    
+
     card.addEventListener('mouseleave', () => {
         gsap.to(card, {
             rotateX: 0,
@@ -97,108 +93,192 @@ tiltCards.forEach((card) => {
     });
 });
 
-// --- INITIAL LOAD SEQUENCE & TEXT SPLIT ---
+/* ===== LOADER PROGRESS ===== */
+const progressFill = document.getElementById('progress-fill');
+const progressPct = document.getElementById('progress-pct');
+const statusLine = document.getElementById('status-line');
+
+const statuses = [
+    'Initializing kernel modules...',
+    'Loading portfolio assets...',
+    'Compiling experience data...',
+    'Rendering project cards...',
+    'Ready.'
+];
+
+let progress = 0;
+const progressInterval = setInterval(() => {
+    progress += Math.floor(Math.random() * 8) + 2;
+    if (progress > 100) progress = 100;
+
+    const bars = Math.floor(progress / 8);
+    progressFill.textContent = '='.repeat(bars);
+    progressPct.textContent = progress + '%';
+
+    const statusIdx = Math.min(Math.floor(progress / 25), statuses.length - 1);
+    statusLine.textContent = '> ' + statuses[statusIdx];
+
+    if (progress >= 100) clearInterval(progressInterval);
+}, 120);
+
+/* ===== INITIAL LOAD SEQUENCE ===== */
 gsap.registerPlugin(ScrollTrigger);
 
-// Manually split hero text to wrap characters
-const charWraps = document.querySelectorAll('.char-wrap');
-charWraps.forEach(wrap => {
-    const text = wrap.innerText;
-    wrap.innerHTML = '';
-    text.split('').forEach(char => {
-        const span = document.createElement('span');
-        span.innerText = char === ' ' ? '\u00A0' : char; 
-        wrap.appendChild(span);
-    });
-});
-
-// Loader Animation
 window.addEventListener('load', () => {
     const tl = gsap.timeline();
-    
-    tl.to('.loader-text', {
+
+    tl.to('.loader-line', {
         opacity: 0,
-        y: -20,
-        duration: 0.5,
-        delay: 0.5
+        y: -8,
+        duration: 0.3,
+        stagger: 0.05
     })
     .to('#loader', {
         yPercent: -100,
-        duration: 1,
+        duration: 0.9,
         ease: "power4.inOut"
     })
-    // Hero Animations
-    .to('.hero-name-highlight', {
-        opacity: 1,
+    .fromTo('.hero-line', {
+        y: 20,
+        opacity: 0
+    }, {
         y: 0,
-        duration: 0.8,
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.15,
         ease: "power3.out"
-    }, "-=0.2")
-    .to('.char-wrap span', {
-        y: 0,
-        opacity: 1,
-        stagger: 0.02,
-        duration: 0.8,
-        ease: "back.out(1.5)",
-    }, "-=0.6")
-    .to('.hero-subtitle', {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out"
-    }, "-=0.5")
-    .to('.hero-btn-container', {
-        opacity: 1,
+    }, "-=0.3")
+    .fromTo('.circuit-corner', {
+        opacity: 0,
+        scale: 0.5
+    }, {
+        opacity: 0.3,
         scale: 1,
-        duration: 0.8,
-        ease: "elastic.out(1, 0.5)"
-    }, "-=0.5");
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "back.out(2)"
+    }, "-=0.4");
 });
 
-// --- ADVANCED SCROLL REVEALS ---
+/* ===== TYPING ANIMATION ===== */
+const typedTextEl = document.getElementById('typed-text');
+const tagline = 'AI & Data Science Engineer \u2022 Innovator';
+let charIndex = 0;
+let isTyping = false;
 
-gsap.utils.toArray('.gsap-reveal:not(.left-slide, .scale-up, .stagger-fade)').forEach(el => {
-    gsap.fromTo(el, 
-        { y: 50, opacity: 0, autoAlpha: 0 },
-        { 
-            y: 0, opacity: 1, autoAlpha: 1, duration: 1.2, ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" }
+function startTyping() {
+    if (isTyping) return;
+    isTyping = true;
+    charIndex = 0;
+    typedTextEl.textContent = '';
+
+    function typeChar() {
+        if (charIndex < tagline.length) {
+            typedTextEl.textContent += tagline[charIndex];
+            charIndex++;
+            setTimeout(typeChar, 35 + Math.random() * 30);
+        } else {
+            isTyping = false;
+        }
+    }
+
+    setTimeout(typeChar, 600);
+}
+
+/* ===== SCROLL-TRIGGERED TYPING ===== */
+ScrollTrigger.create({
+    trigger: '#hero',
+    start: 'top 60%',
+    onEnter: startTyping,
+    once: true
+});
+
+/* ===== SCROLL REVEALS ===== */
+gsap.utils.toArray('.gsap-reveal').forEach(el => {
+    const isLeft = el.classList.contains('left-slide');
+    const isScale = el.classList.contains('scale-up');
+    const isStagger = el.classList.contains('stagger-fade');
+
+    let vars = { y: 40, opacity: 0, autoAlpha: 0 };
+    if (isLeft) vars = { x: -40, opacity: 0, autoAlpha: 0 };
+    if (isScale) vars = { scale: 0.9, opacity: 0, autoAlpha: 0 };
+
+    let toVars = {
+        y: 0, x: 0, scale: 1, opacity: 1, autoAlpha: 1,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: el,
+            start: "top 88%",
+            toggleActions: "play none none reverse"
+        }
+    };
+
+    if (isScale) toVars.ease = "back.out(1.2)";
+
+    gsap.fromTo(el, vars, toVars);
+});
+
+/* ===== SKILL GROUP STAGGER ===== */
+gsap.utils.toArray('.skill-group').forEach((group, i) => {
+    gsap.fromTo(group.querySelectorAll('.skill-chip'),
+        { y: 12, opacity: 0 },
+        {
+            y: 0, opacity: 1, duration: 0.5, stagger: 0.04, ease: "power2.out",
+            scrollTrigger: {
+                trigger: group,
+                start: "top 90%",
+                toggleActions: "play none none reverse"
+            }
+        }
+    );
+
+    gsap.fromTo(group.querySelector('.trace-horizontal'),
+        { scaleX: 0, opacity: 0 },
+        {
+            scaleX: 1, opacity: 0.3, duration: 0.6, ease: "power2.out",
+            transformOrigin: "left center",
+            scrollTrigger: {
+                trigger: group,
+                start: "top 90%",
+                toggleActions: "play none none reverse"
+            }
         }
     );
 });
 
-gsap.utils.toArray('.gsap-reveal.left-slide').forEach(el => {
-    gsap.fromTo(el, 
-        { x: -50, opacity: 0, autoAlpha: 0 },
-        { 
-            x: 0, opacity: 1, autoAlpha: 1, duration: 1.2, ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" }
+/* ===== GIT COMMIT STAGGER ===== */
+gsap.utils.toArray('.git-commit').forEach((commit, i) => {
+    gsap.fromTo(commit,
+        { x: -20, opacity: 0 },
+        {
+            x: 0, opacity: 1, duration: 0.7, delay: i * 0.15, ease: "power3.out",
+            scrollTrigger: {
+                trigger: commit,
+                start: "top 88%",
+                toggleActions: "play none none reverse"
+            }
         }
     );
 });
 
-gsap.utils.toArray('.gsap-reveal.scale-up').forEach(el => {
-    gsap.fromTo(el, 
-        { scale: 0.9, opacity: 0, autoAlpha: 0 },
-        { 
-            scale: 1, opacity: 1, autoAlpha: 1, duration: 1, ease: "back.out(1.2)",
-            scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" }
-        }
-    );
-});
+/* ===== NAV TOGGLE (MOBILE) ===== */
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.querySelector('.nav-links');
 
-gsap.utils.toArray('.gsap-reveal.stagger-fade').forEach(container => {
-    gsap.set(container, { autoAlpha: 1 }); // Reveal the container itself
-    gsap.fromTo(container.children, 
-        { y: 20, opacity: 0, autoAlpha: 0 },
-        { 
-            y: 0, opacity: 1, autoAlpha: 1, duration: 0.8, stagger: 0.05, ease: "power2.out",
-            scrollTrigger: { trigger: container, start: "top 85%", toggleActions: "play none none reverse" }
-        }
-    );
-});
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+    });
 
-// --- THREE.JS BACKGROUND SCENE ---
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+        });
+    });
+}
+
+/* ===== THREE.JS BACKGROUND ===== */
 const canvas = document.getElementById('webgl-canvas');
 const scene = new THREE.Scene();
 
@@ -209,35 +289,35 @@ const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialia
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-// Create Particles
 const particlesGeometry = new THREE.BufferGeometry();
-const particlesCount = 500; 
+const particlesCount = 300;
 const posArray = new Float32Array(particlesCount * 3);
 
-for(let i = 0; i < particlesCount * 3; i++) {
-    posArray[i] = (Math.random() - 0.5) * 350;
+for (let i = 0; i < particlesCount * 3; i++) {
+    posArray[i] = (Math.random() - 0.5) * 300;
 }
 
 particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
-// Material (Black for light theme)
-let particlesMaterial = new THREE.PointsMaterial({
-    size: 1.5,
-    color: 0x000000,
+const particlesMaterial = new THREE.PointsMaterial({
+    size: 1.8,
+    color: 0x33ff77,
     transparent: true,
-    opacity: 0.8
+    opacity: 0.6,
+    blending: THREE.AdditiveBlending,
 });
 
 const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
 scene.add(particlesMesh);
 
-let lineMaterial = new THREE.LineBasicMaterial({
-    color: 0x000000,
+const lineMaterial = new THREE.LineBasicMaterial({
+    color: 0x33ff77,
     transparent: true,
-    opacity: 0.15
+    opacity: 0.08,
+    blending: THREE.AdditiveBlending,
 });
 
-const maxConnections = 800;
+const maxConnections = 600;
 const lineGeometry = new THREE.BufferGeometry();
 const linePositions = new Float32Array(maxConnections * 3 * 2);
 lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
@@ -246,9 +326,10 @@ lineGeometry.setDrawRange(0, 0);
 const linesMesh = new THREE.LineSegments(lineGeometry, lineMaterial);
 scene.add(linesMesh);
 
-// Mouse Interaction
-let mouseX = 0; let mouseY = 0;
-let targetX = 0; let targetY = 0;
+let mouseX = 0;
+let mouseY = 0;
+let targetX = 0;
+let targetY = 0;
 const windowHalfX = window.innerWidth / 2;
 const windowHalfY = window.innerHeight / 2;
 
@@ -263,20 +344,20 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-// Animation Loop
 const clock = new THREE.Clock();
+
 function animate() {
     requestAnimationFrame(animate);
     const elapsedTime = clock.getElapsedTime();
 
-    particlesMesh.rotation.y = elapsedTime * 0.03;
-    particlesMesh.rotation.x = elapsedTime * 0.015;
-    linesMesh.rotation.y = elapsedTime * 0.03;
-    linesMesh.rotation.x = elapsedTime * 0.015;
-    
-    targetX = mouseX * 0.08;
-    targetY = mouseY * 0.08;
-    
+    particlesMesh.rotation.y = elapsedTime * 0.025;
+    particlesMesh.rotation.x = elapsedTime * 0.01;
+    linesMesh.rotation.y = elapsedTime * 0.025;
+    linesMesh.rotation.x = elapsedTime * 0.01;
+
+    targetX = mouseX * 0.06;
+    targetY = mouseY * 0.06;
+
     camera.position.x += (targetX - camera.position.x) * 0.02;
     camera.position.y += (-targetY - camera.position.y) * 0.02;
     camera.lookAt(scene.position);
@@ -284,7 +365,7 @@ function animate() {
     let vertexpos = 0;
     let numConnected = 0;
     const positions = particlesMesh.geometry.attributes.position.array;
-    const minDistance = 35; 
+    const minDistance = 40;
 
     for (let i = 0; i < particlesCount; i++) {
         for (let j = i + 1; j < particlesCount; j++) {
@@ -294,7 +375,7 @@ function animate() {
             const distSq = dx * dx + dy * dy + dz * dz;
 
             if (distSq < minDistance * minDistance) {
-                if(numConnected < maxConnections) {
+                if (numConnected < maxConnections) {
                     linePositions[vertexpos++] = positions[i * 3];
                     linePositions[vertexpos++] = positions[i * 3 + 1];
                     linePositions[vertexpos++] = positions[i * 3 + 2];
@@ -302,13 +383,13 @@ function animate() {
                     linePositions[vertexpos++] = positions[j * 3];
                     linePositions[vertexpos++] = positions[j * 3 + 1];
                     linePositions[vertexpos++] = positions[j * 3 + 2];
-                    
+
                     numConnected++;
                 }
             }
         }
     }
-    
+
     linesMesh.geometry.setDrawRange(0, numConnected * 2);
     linesMesh.geometry.attributes.position.needsUpdate = true;
     renderer.render(scene, camera);

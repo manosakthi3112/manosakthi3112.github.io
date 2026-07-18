@@ -1,281 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manosakthi Thiyagarajan | Senior AI & Data Science Engineer</title>
-    <meta name="description"
-        content="Portfolio of Manosakthi Thiyagarajan, a Senior AI & Data Science Engineer building intelligent digital experiences.">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <meta name="description" content="Portfolio of Manosakthi Thiyagarajan, a Senior AI & Data Science Engineer building intelligent digital experiences.">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=3">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-
 <body>
-    <!-- Cinematic Loader -->
-    <div id="loader">
-        <div class="loader-text">INITIALIZING...</div>
-    </div>
-
+    <div class="crt-overlay"></div>
+    <div class="scanlines"></div>
     <div class="noise"></div>
+
+    <div class="bg-code">
+        <span class="code-snip" style="top:8%;left:3%;transform:rotate(-2deg)">import torch.nn as nn</span>
+        <span class="code-snip" style="top:18%;right:6%;transform:rotate(3deg)">class Model(nn.Module):</span>
+        <span class="code-snip" style="top:32%;left:5%;transform:rotate(-4deg)">int main() { return 0; }</span>
+        <span class="code-snip" style="top:45%;right:4%;transform:rotate(2deg)">#include &lt;iostream&gt;</span>
+        <span class="code-snip" style="top:58%;left:2%;transform:rotate(-1deg)">model.fit(X_train, y_train)</span>
+        <span class="code-snip" style="top:72%;right:8%;transform:rotate(3deg)">std::vector&lt;int&gt; data;</span>
+        <span class="code-snip" style="top:85%;left:6%;transform:rotate(-3deg)">loss.backward()</span>
+        <span class="code-snip" style="top:12%;right:2%;transform:rotate(1deg)">def forward(self, x):</span>
+    </div>
 
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
     <canvas id="webgl-canvas"></canvas>
 
-    <nav class="glass">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <div class="logo magnetic"><strong>MT.</strong></div>
-            <ul style="display: flex; gap: 30px; align-items: center; list-style: none;">
-                <li><a href="#hero" class="magnetic nav-link">Home</a></li>
-                <li><a href="#about" class="magnetic nav-link">About</a></li>
-                <li><a href="#skills" class="magnetic nav-link">Skills</a></li>
-                <li><a href="#education" class="magnetic nav-link">Education</a></li>
-                <li><a href="#projects" class="magnetic nav-link">Projects</a></li>
-                <li><a href="#experience" class="magnetic nav-link">Experience</a></li>
-                <li><a href="#contact" class="magnetic nav-link">Contact</a></li>
+    <div id="loader">
+        <div class="loader-content">
+            <div class="terminal-bar">
+                <div class="terminal-dots">
+                    <span class="dot-red"></span>
+                    <span class="dot-yellow"></span>
+                    <span class="dot-green"></span>
+                </div>
+                <span class="terminal-path">robo@portfolio:~</span>
+            </div>
+            <div class="loader-body">
+                <div class="loader-line"><span class="prompt">></span> <span class="cmd">systemctl start portfolio.service</span></div>
+                <div class="loader-line">
+                    <span class="progress">[</span><span class="progress-fill" id="progress-fill"></span><span class="progress">]</span>
+                    <span class="progress-pct" id="progress-pct">0%</span>
+                </div>
+                <div class="loader-line status-line" id="status-line">Initializing...</div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="terminal-nav" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <span class="nav-prompt">robo@portfolio:~$</span>
+                <span class="nav-logo">MT</span>
+                <span class="cursor-blink" id="nav-cursor">_</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link magnetic">Home</a></li>
+                <li><a href="#about" class="nav-link magnetic">About</a></li>
+                <li><a href="#skills" class="nav-link magnetic">Skills</a></li>
+                <li><a href="#education" class="nav-link magnetic">Education</a></li>
+                <li><a href="#projects" class="nav-link magnetic">Projects</a></li>
+                <li><a href="#experience" class="nav-link magnetic">Experience</a></li>
+                <li><a href="#contact" class="nav-link magnetic">Contact</a></li>
+                <li><a href="Resume.pdf" target="_blank" class="nav-link resume-link magnetic"><i data-lucide="file-text"></i> Resume</a></li>
             </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
     <main>
         <section id="hero">
-            <div class="container hero-content">
-                <p class="hero-name-highlight">Hello, I am <span class="name-box">Manosakthi Thiyagarajan</span></p>
-                <h1 class="hero-title text-gradient">
-                    <span class="char-wrap">Architecting</span><br>
-                    <span class="char-wrap">Intelligent</span> <span class="char-wrap">Systems</span>
-                </h1>
-                <p class="hero-subtitle">AI & Data Science Engineer &bull; Innovator</p>
-                <div class="hero-btn-container">
-                    <a href="#projects" class="hero-cta magnetic">Explore Work <i data-lucide="arrow-right"></i></a>
+            <div class="container">
+                <div class="terminal-window hero-terminal">
+                    <div class="terminal-bar">
+                        <div class="terminal-dots">
+                            <span class="dot-red"></span>
+                            <span class="dot-yellow"></span>
+                            <span class="dot-green"></span>
+                        </div>
+                        <span class="terminal-path">robo@portfolio:~/hero</span>
+                        <span class="terminal-action">✕</span>
+                    </div>
+                    <div class="terminal-body hero-body">
+                        <div class="hero-line"><span class="prompt">></span> <span class="cmd">whoami</span></div>
+                        <div class="hero-line output name-highlight"><span class="syntax-string">Manosakthi Thiyagarajan</span></div>
+                        <div class="hero-line"><span class="prompt">></span> <span class="cmd">cat title.txt</span></div>
+                        <div class="hero-line output title-line"><span class="syntax-var">Architecting Intelligent Systems</span></div>
+                        <div class="hero-line output tagline-line">
+                            <span class="syntax-comment"># </span><span id="typed-text"></span><span class="cursor-blink hero-cursor">▊</span>
+                        </div>
+                        <div class="hero-line cta-line">
+                            <span class="prompt">></span>
+                            <a href="#projects" class="cmd-btn magnetic">
+                                ./explore --target=projects <i data-lucide="arrow-right" class="btn-icon"></i>
+                            </a>
+                        </div>
+                        <div class="circuit-corner tl"></div>
+                        <div class="circuit-corner tr"></div>
+                        <div class="circuit-corner bl"></div>
+                        <div class="circuit-corner br"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="about">
             <div class="container">
-                <div class="section-header gsap-reveal">
-                    <h2>01. About Me</h2><span class="line"></span>
+                <div class="terminal-prompt trigger-prompt">
+                    <span class="prompt">></span> <span class="cmd">cat about.md</span>
+                    <span class="cursor-blink prompt-cursor">_</span>
                 </div>
-                <div class="gsap-reveal left-slide" style="max-width: 800px;">
-                    <p style="font-size: 1.2rem; margin-bottom: 20px;">Highly motivated Senior AI & Data Science
-                        Engineer with a strong background in Artificial Intelligence, Deep Learning, and Computer
-                        Vision.</p>
-                    <p style="font-size: 1.2rem; margin-bottom: 20px;">Proven track record of developing innovative AI
-                        solutions, including real-time gesture recognition, medical image classification, and autonomous
-                        robotic systems. Recipient of multiple national and international hackathon awards.</p>
-                    <p style="font-size: 1.2rem;">Passionate about building scalable, intelligent ecosystems and
-                        exploring the boundaries of Vibe Coding and Agile development.</p>
+                <div class="terminal-window gsap-reveal">
+                    <div class="terminal-bar">
+                        <div class="terminal-dots">
+                            <span class="dot-red"></span>
+                            <span class="dot-yellow"></span>
+                            <span class="dot-green"></span>
+                        </div>
+                        <span class="terminal-path">robo@portfolio:~/about</span>
+                    </div>
+                    <div class="terminal-body about-body">
+                        <div class="line"><span class="syntax-comment"># About Me</span></div>
+                        <div class="line"><span class="syntax-comment">---</span></div>
+                        <div class="line spacer"></div>
+                        <div class="line text-line">Highly motivated Senior AI & Data Science Engineer with a strong background in Artificial Intelligence, Deep Learning, and Computer Vision.</div>
+                        <div class="line spacer"></div>
+                        <div class="line text-line">Proven track record of developing innovative AI solutions, including real-time gesture recognition, medical image classification, and autonomous robotic systems. Recipient of multiple national and international hackathon awards.</div>
+                        <div class="line spacer"></div>
+                        <div class="line text-line">Passionate about building scalable, intelligent ecosystems and exploring the boundaries of Vibe Coding and Agile development.</div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="skills">
             <div class="container">
-                <div class="section-header gsap-reveal">
-                    <h2>02. Skills</h2><span class="line"></span>
+                <div class="terminal-prompt trigger-prompt">
+                    <span class="prompt">></span> <span class="cmd">ls /skills/ --tree</span>
+                    <span class="cursor-blink prompt-cursor">_</span>
                 </div>
-                <div class="skills-container gsap-reveal stagger-fade highlight-container">
-                    <div class="skill-item magnetic highlight-item">Python</div>
-                    <div class="skill-item magnetic highlight-item">C</div>
-                    <div class="skill-item magnetic highlight-item">Java</div>
-                    <div class="skill-item magnetic highlight-item">SQL (MySQL)</div>
-                    <div class="skill-item magnetic highlight-item">NoSQL (MongoDB)</div>
-                    <div class="skill-item magnetic highlight-item">HTML5 / CSS3</div>
-                    <div class="skill-item magnetic highlight-item">JavaScript (React.js)</div>
+                <div class="terminal-window gsap-reveal">
+                    <div class="terminal-bar">
+                        <div class="terminal-dots">
+                            <span class="dot-red"></span>
+                            <span class="dot-yellow"></span>
+                            <span class="dot-green"></span>
+                        </div>
+                        <span class="terminal-path">robo@portfolio:~/skills</span>
+                    </div>
+                    <div class="terminal-body skills-body">
+                        <div class="skills-schematic">
 
-                    <div class="skill-item magnetic highlight-item">TensorFlow</div>
-                    <div class="skill-item magnetic highlight-item">PyTorch</div>
-                    <div class="skill-item magnetic highlight-item">CNN / LSTM</div>
-                    <div class="skill-item magnetic highlight-item">NLP</div>
-                    <div class="skill-item magnetic highlight-item">Transformer Models</div>
-                    <div class="skill-item magnetic highlight-item">YOLO</div>
-                    <div class="skill-item magnetic highlight-item">EfficientNet</div>
+                            <div class="skill-group">
+                                <div class="skill-group-header">
+                                    <span class="group-icon syntax-purple">●</span>
+                                    <span class="group-name">Languages</span>
+                                </div>
+                                <div class="trace-horizontal"></div>
+                                <div class="skill-items">
+                                    <span class="skill-chip magnetic">Python</span>
+                                    <span class="skill-chip magnetic">C</span>
+                                    <span class="skill-chip magnetic">Java</span>
+                                    <span class="skill-chip magnetic">SQL</span>
+                                    <span class="skill-chip magnetic">NoSQL</span>
+                                    <span class="skill-chip magnetic">HTML/CSS</span>
+                                    <span class="skill-chip magnetic">JavaScript</span>
+                                </div>
+                            </div>
 
-                    <div class="skill-item magnetic highlight-item">Flask</div>
-                    <div class="skill-item magnetic highlight-item">ROS (Robot OS)</div>
-                    <div class="skill-item magnetic highlight-item">Unity Engine (AR/VR)</div>
-                    <div class="skill-item magnetic highlight-item">Data Visualization</div>
-                    <div class="skill-item magnetic highlight-item">API Integration</div>
-                    <div class="skill-item magnetic highlight-item">Agile Methodologies</div>
+                            <div class="skill-group">
+                                <div class="skill-group-header">
+                                    <span class="group-icon syntax-blue">◆</span>
+                                    <span class="group-name">AI & ML</span>
+                                </div>
+                                <div class="trace-horizontal"></div>
+                                <div class="skill-items">
+                                    <span class="skill-chip magnetic">TensorFlow</span>
+                                    <span class="skill-chip magnetic">PyTorch</span>
+                                    <span class="skill-chip magnetic">CNN/LSTM</span>
+                                    <span class="skill-chip magnetic">NLP</span>
+                                    <span class="skill-chip magnetic">Transformers</span>
+                                    <span class="skill-chip magnetic">YOLO</span>
+                                    <span class="skill-chip magnetic">EfficientNet</span>
+                                </div>
+                            </div>
 
-                    <div class="skill-item magnetic highlight-item">Computer Vision</div>
-                    <div class="skill-item magnetic highlight-item">Time-Series Forecasting</div>
-                    <div class="skill-item magnetic highlight-item">Robotics</div>
+                            <div class="skill-group">
+                                <div class="skill-group-header">
+                                    <span class="group-icon syntax-orange">▲</span>
+                                    <span class="group-name">Tools & Platforms</span>
+                                </div>
+                                <div class="trace-horizontal"></div>
+                                <div class="skill-items">
+                                    <span class="skill-chip magnetic">Flask</span>
+                                    <span class="skill-chip magnetic">ROS</span>
+                                    <span class="skill-chip magnetic">Unity</span>
+                                    <span class="skill-chip magnetic">Data Viz</span>
+                                    <span class="skill-chip magnetic">API</span>
+                                    <span class="skill-chip magnetic">Agile</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-group">
+                                <div class="skill-group-header">
+                                    <span class="group-icon syntax-green">★</span>
+                                    <span class="group-name">Specializations</span>
+                                </div>
+                                <div class="trace-horizontal"></div>
+                                <div class="skill-items">
+                                    <span class="skill-chip magnetic">Computer Vision</span>
+                                    <span class="skill-chip magnetic">Time-Series</span>
+                                    <span class="skill-chip magnetic">Robotics</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="education">
             <div class="container">
-                <div class="section-header gsap-reveal">
-                    <h2>03. Education</h2><span class="line"></span>
+                <div class="terminal-prompt trigger-prompt">
+                    <span class="prompt">></span> <span class="cmd">cat education.json</span>
+                    <span class="cursor-blink prompt-cursor">_</span>
                 </div>
-                <div class="highlight-container glass gsap-reveal scale-up"
-                    style="padding: 40px; border-left: 6px solid var(--text-primary);">
-                    <h3 class="highlight-title" style="font-size: 2.2rem;">B.Tech in Artificial Intelligence & Data
-                        Science</h3>
-                    <h4 style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 15px;">P.A. College of
-                        Engineering and Technology, Pollachi &bull; June 2022 – April 2026</h4>
-                    <div class="tags" style="display: flex; gap: 10px; margin-bottom: 20px;"><span class="tag"
-                            style="background: var(--text-primary); color: var(--bg-primary); padding: 5px 12px; border-radius: 20px; font-weight: bold;">GPA:
-                            8.8 / 10.0</span></div>
-                    <p style="font-size: 1.2rem;">Focused on advanced Machine Learning, Neural Networks, and Big Data
-                        Analytics.</p>
+                <div class="terminal-window gsap-reveal">
+                    <div class="terminal-bar">
+                        <div class="terminal-dots">
+                            <span class="dot-red"></span>
+                            <span class="dot-yellow"></span>
+                            <span class="dot-green"></span>
+                        </div>
+                        <span class="terminal-path">robo@portfolio:~/education</span>
+                    </div>
+                    <div class="terminal-body edu-body">
+                        <div class="edu-card">
+                            <div class="line"><span class="syntax-key">"degree"</span>: <span class="syntax-string">"B.Tech in Artificial Intelligence & Data Science"</span>,</div>
+                            <div class="line"><span class="syntax-key">"institution"</span>: <span class="syntax-string">"P.A. College of Engineering and Technology, Pollachi"</span>,</div>
+                            <div class="line"><span class="syntax-key">"duration"</span>: <span class="syntax-string">"June 2022 &ndash; April 2026"</span>,</div>
+                            <div class="line"><span class="syntax-key">"gpa"</span>: <span class="syntax-string">"8.8 / 10.0"</span>,</div>
+                            <div class="line"><span class="syntax-key">"focus"</span>: <span class="syntax-string">"Advanced ML, Neural Networks, Big Data Analytics"</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="projects">
             <div class="container">
-                <div class="section-header gsap-reveal">
-                    <h2>04. Selected Work</h2><span class="line"></span>
+                <div class="terminal-prompt trigger-prompt">
+                    <span class="prompt">></span> <span class="cmd">ls projects/ --format=punch</span>
+                    <span class="cursor-blink prompt-cursor">_</span>
                 </div>
-                <div class="grid-3">
+                <div class="projects-grid">
 
-                    <div class="project-card glass gsap-reveal scale-up tilt-card">
-                        <div class="project-card-inner">
-                            <h3>Sign Language Detection</h3>
-                            <div class="tags"><span class="tag">CNN</span><span class="tag">Deep Learning</span><span
-                                    class="tag">Computer Vision</span></div>
-                            <p>A real-time gesture recognition system designed to translate sign language into
-                                text/speech using deep learning.</p>
-                            <a href="#" class="project-link magnetic">View Case Study <i
-                                    data-lucide="external-link"></i></a>
+                    <div class="punch-card gsap-reveal tilt-card" data-lang="python">
+                        <div class="punch-strip"></div>
+                        <div class="punch-holes"><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="punch-body">
+                            <div class="punch-lang">PYTHON</div>
+                            <h3 class="punch-title">Sign Language Detection</h3>
+                            <div class="punch-tags"><span class="punch-tag">CNN</span><span class="punch-tag">Deep Learning</span><span class="punch-tag">Computer Vision</span></div>
+                            <p class="punch-desc">A real-time gesture recognition system designed to translate sign language into text/speech using deep learning.</p>
+                            <a href="#" class="punch-link magnetic"><span class="prompt">></span> view_case_study <i data-lucide="external-link" class="btn-icon"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card glass gsap-reveal scale-up tilt-card" style="transition-delay: 0.1s;">
-                        <div class="project-card-inner">
-                            <h3>AI Learning App</h3>
-                            <div class="tags"><span class="tag">LLMs</span><span class="tag">Education</span><span
-                                    class="tag">Accessibility</span></div>
-                            <p>A comprehensive educational platform featuring sign-based interaction and MCQ generation
-                                via LLMs for Deaf & Mute individuals.</p>
-                            <a href="#" class="project-link magnetic">View Case Study <i
-                                    data-lucide="external-link"></i></a>
+                    <div class="punch-card gsap-reveal tilt-card" data-lang="ai">
+                        <div class="punch-strip"></div>
+                        <div class="punch-holes"><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="punch-body">
+                            <div class="punch-lang">AI/ML</div>
+                            <h3 class="punch-title">AI Learning App</h3>
+                            <div class="punch-tags"><span class="punch-tag">LLMs</span><span class="punch-tag">Education</span><span class="punch-tag">Accessibility</span></div>
+                            <p class="punch-desc">A comprehensive educational platform featuring sign-based interaction and MCQ generation via LLMs for Deaf & Mute individuals.</p>
+                            <a href="#" class="punch-link magnetic"><span class="prompt">></span> view_case_study <i data-lucide="external-link" class="btn-icon"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card glass gsap-reveal scale-up tilt-card" style="transition-delay: 0.2s;">
-                        <div class="project-card-inner">
-                            <h3>Anti-Spoofing System</h3>
-                            <div class="tags"><span class="tag">Security</span><span class="tag">Feature
-                                    Extraction</span><span class="tag">Classification</span></div>
-                            <p>A high-security pipeline detecting spoofing attacks through advanced feature extraction
-                                and multi-stage image classification.</p>
-                            <a href="#" class="project-link magnetic">View Case Study <i
-                                    data-lucide="external-link"></i></a>
+                    <div class="punch-card gsap-reveal tilt-card" data-lang="cpp">
+                        <div class="punch-strip"></div>
+                        <div class="punch-holes"><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="punch-body">
+                            <div class="punch-lang">SECURITY</div>
+                            <h3 class="punch-title">Anti-Spoofing System</h3>
+                            <div class="punch-tags"><span class="punch-tag">Security</span><span class="punch-tag">Feature Extraction</span><span class="punch-tag">Classification</span></div>
+                            <p class="punch-desc">A high-security pipeline detecting spoofing attacks through advanced feature extraction and multi-stage image classification.</p>
+                            <a href="#" class="punch-link magnetic"><span class="prompt">></span> view_case_study <i data-lucide="external-link" class="btn-icon"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card glass gsap-reveal scale-up tilt-card">
-                        <div class="project-card-inner">
-                            <h3>Plant Disease Detection</h3>
-                            <div class="tags"><span class="tag">EfficientNetV2-M</span><span class="tag">HSV</span><span
-                                    class="tag">Agriculture</span></div>
-                            <p>An AI model using color space analysis (HSV) to identify crop diseases with high
-                                precision.</p>
-                            <a href="#" class="project-link magnetic">View Case Study <i
-                                    data-lucide="external-link"></i></a>
+                    <div class="punch-card gsap-reveal tilt-card" data-lang="python">
+                        <div class="punch-strip"></div>
+                        <div class="punch-holes"><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="punch-body">
+                            <div class="punch-lang">PYTHON</div>
+                            <h3 class="punch-title">Plant Disease Detection</h3>
+                            <div class="punch-tags"><span class="punch-tag">EfficientNetV2-M</span><span class="punch-tag">HSV</span><span class="punch-tag">Agriculture</span></div>
+                            <p class="punch-desc">An AI model using color space analysis (HSV) to identify crop diseases with high precision.</p>
+                            <a href="#" class="punch-link magnetic"><span class="prompt">></span> view_case_study <i data-lucide="external-link" class="btn-icon"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card glass gsap-reveal scale-up tilt-card" style="transition-delay: 0.1s;">
-                        <div class="project-card-inner">
-                            <h3>Hybrid Encryption</h3>
-                            <div class="tags"><span class="tag">Neural Networks</span><span
-                                    class="tag">SHA-256</span><span class="tag">RSA</span></div>
-                            <p>A secure framework combining SHA-256, RSA, and Neural Network optimization for enhanced
-                                cryptography.</p>
-                            <a href="#" class="project-link magnetic">View Case Study <i
-                                    data-lucide="external-link"></i></a>
+                    <div class="punch-card gsap-reveal tilt-card" data-lang="cpp">
+                        <div class="punch-strip"></div>
+                        <div class="punch-holes"><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="punch-body">
+                            <div class="punch-lang">ENCRYPTION</div>
+                            <h3 class="punch-title">Hybrid Encryption</h3>
+                            <div class="punch-tags"><span class="punch-tag">Neural Networks</span><span class="punch-tag">SHA-256</span><span class="punch-tag">RSA</span></div>
+                            <p class="punch-desc">A secure framework combining SHA-256, RSA, and Neural Network optimization for enhanced cryptography.</p>
+                            <a href="#" class="punch-link magnetic"><span class="prompt">></span> view_case_study <i data-lucide="external-link" class="btn-icon"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card glass gsap-reveal scale-up tilt-card" style="transition-delay: 0.2s;">
-                        <div class="project-card-inner">
-                            <h3>Retinoblastoma AI</h3>
-                            <div class="tags"><span class="tag">CNN</span><span class="tag">Medical Imaging</span><span
-                                    class="tag">Healthcare</span></div>
-                            <p>A medical-grade CNN model for classifying retinal cancer images with advanced 3-layer
-                                preprocessing.</p>
-                            <a href="#" class="project-link magnetic">View Case Study <i
-                                    data-lucide="external-link"></i></a>
+                    <div class="punch-card gsap-reveal tilt-card" data-lang="ai">
+                        <div class="punch-strip"></div>
+                        <div class="punch-holes"><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="punch-body">
+                            <div class="punch-lang">AI/ML</div>
+                            <h3 class="punch-title">Retinoblastoma AI</h3>
+                            <div class="punch-tags"><span class="punch-tag">CNN</span><span class="punch-tag">Medical Imaging</span><span class="punch-tag">Healthcare</span></div>
+                            <p class="punch-desc">A medical-grade CNN model for classifying retinal cancer images with advanced 3-layer preprocessing.</p>
+                            <a href="#" class="punch-link magnetic"><span class="prompt">></span> view_case_study <i data-lucide="external-link" class="btn-icon"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card glass gsap-reveal scale-up tilt-card">
-                        <div class="project-card-inner">
-                            <h3>AI MCQ Generator</h3>
-                            <div class="tags"><span class="tag">NLP</span><span class="tag">Transformers</span><span
-                                    class="tag">Automation</span></div>
-                            <p>An automated testing system built using Transformer-based NLP models to seamlessly
-                                generate multiple-choice questions.</p>
-                            <a href="#" class="project-link magnetic">View Case Study <i
-                                    data-lucide="external-link"></i></a>
+                    <div class="punch-card gsap-reveal tilt-card" data-lang="ai">
+                        <div class="punch-strip"></div>
+                        <div class="punch-holes"><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="punch-body">
+                            <div class="punch-lang">AI/ML</div>
+                            <h3 class="punch-title">AI MCQ Generator</h3>
+                            <div class="punch-tags"><span class="punch-tag">NLP</span><span class="punch-tag">Transformers</span><span class="punch-tag">Automation</span></div>
+                            <p class="punch-desc">An automated testing system built using Transformer-based NLP models to seamlessly generate multiple-choice questions.</p>
+                            <a href="#" class="punch-link magnetic"><span class="prompt">></span> view_case_study <i data-lucide="external-link" class="btn-icon"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card glass gsap-reveal scale-up tilt-card" style="transition-delay: 0.1s;">
-                        <div class="project-card-inner">
-                            <h3>Notes App (Local LLM)</h3>
-                            <div class="tags"><span class="tag">React Native</span><span class="tag">Phi-3</span><span
-                                    class="tag">Knowledge Graph</span></div>
-                            <p>A React Native app utilizing Phi-3 for local inference and automated knowledge graph
-                                creation securely on-device.</p>
-                            <a href="#" class="project-link magnetic">View Case Study <i
-                                    data-lucide="external-link"></i></a>
+                    <div class="punch-card gsap-reveal tilt-card" data-lang="ai">
+                        <div class="punch-strip"></div>
+                        <div class="punch-holes"><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="punch-body">
+                            <div class="punch-lang">AI/ML</div>
+                            <h3 class="punch-title">Notes App (Local LLM)</h3>
+                            <div class="punch-tags"><span class="punch-tag">React Native</span><span class="punch-tag">Phi-3</span><span class="punch-tag">Knowledge Graph</span></div>
+                            <p class="punch-desc">A React Native app utilizing Phi-3 for local inference and automated knowledge graph creation securely on-device.</p>
+                            <a href="#" class="punch-link magnetic"><span class="prompt">></span> view_case_study <i data-lucide="external-link" class="btn-icon"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card glass gsap-reveal scale-up tilt-card" style="transition-delay: 0.2s;">
-                        <div class="project-card-inner">
-                            <h3>Expense Tracking</h3>
-                            <div class="tags"><span class="tag">LLaMA-2</span><span class="tag">NLP</span><span
-                                    class="tag">Finance</span></div>
-                            <p>An automated SMS-based expense analyzer using LLaMA-2 for intelligent transaction
-                                extraction.</p>
-                            <a href="#" class="project-link magnetic">View Case Study <i
-                                    data-lucide="external-link"></i></a>
+                    <div class="punch-card gsap-reveal tilt-card" data-lang="ai">
+                        <div class="punch-strip"></div>
+                        <div class="punch-holes"><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="punch-body">
+                            <div class="punch-lang">AI/ML</div>
+                            <h3 class="punch-title">Expense Tracking</h3>
+                            <div class="punch-tags"><span class="punch-tag">LLaMA-2</span><span class="punch-tag">NLP</span><span class="punch-tag">Finance</span></div>
+                            <p class="punch-desc">An automated SMS-based expense analyzer using LLaMA-2 for intelligent transaction extraction.</p>
+                            <a href="#" class="punch-link magnetic"><span class="prompt">></span> view_case_study <i data-lucide="external-link" class="btn-icon"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card glass gsap-reveal scale-up tilt-card">
-                        <div class="project-card-inner">
-                            <h3>Bird Detection & Tracking</h3>
-                            <div class="tags"><span class="tag">YOLO</span><span class="tag">EfficientNet</span><span
-                                    class="tag">Computer Vision</span></div>
-                            <p>A wildlife monitoring system combining YOLO-based tracking and EfficientNet-based species
-                                classification.</p>
-                            <a href="#" class="project-link magnetic">View Case Study <i
-                                    data-lucide="external-link"></i></a>
+                    <div class="punch-card gsap-reveal tilt-card" data-lang="python">
+                        <div class="punch-strip"></div>
+                        <div class="punch-holes"><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="punch-body">
+                            <div class="punch-lang">PYTHON</div>
+                            <h3 class="punch-title">Bird Detection & Tracking</h3>
+                            <div class="punch-tags"><span class="punch-tag">YOLO</span><span class="punch-tag">EfficientNet</span><span class="punch-tag">Computer Vision</span></div>
+                            <p class="punch-desc">A wildlife monitoring system combining YOLO-based tracking and EfficientNet-based species classification.</p>
+                            <a href="#" class="punch-link magnetic"><span class="prompt">></span> view_case_study <i data-lucide="external-link" class="btn-icon"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card glass gsap-reveal scale-up tilt-card" style="transition-delay: 0.1s;">
-                        <div class="project-card-inner">
-                            <h3>Stock Prediction</h3>
-                            <div class="tags"><span class="tag">LSTM</span><span class="tag">Time-Series</span><span
-                                    class="tag">Finance</span></div>
-                            <p>A financial forecasting tool using LSTM networks for advanced time-series stock market
-                                analysis.</p>
-                            <a href="#" class="project-link magnetic">View Case Study <i
-                                    data-lucide="external-link"></i></a>
+                    <div class="punch-card gsap-reveal tilt-card" data-lang="python">
+                        <div class="punch-strip"></div>
+                        <div class="punch-holes"><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="punch-body">
+                            <div class="punch-lang">PYTHON</div>
+                            <h3 class="punch-title">Stock Prediction</h3>
+                            <div class="punch-tags"><span class="punch-tag">LSTM</span><span class="punch-tag">Time-Series</span><span class="punch-tag">Finance</span></div>
+                            <p class="punch-desc">A financial forecasting tool using LSTM networks for advanced time-series stock market analysis.</p>
+                            <a href="#" class="punch-link magnetic"><span class="prompt">></span> view_case_study <i data-lucide="external-link" class="btn-icon"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card glass gsap-reveal scale-up tilt-card" style="transition-delay: 0.2s;">
-                        <div class="project-card-inner">
-                            <h3>3D Mockup Designer</h3>
-                            <div class="tags"><span class="tag">3D Configurator</span><span class="tag">AI
-                                    Forecasting</span></div>
-                            <p>An interactive 3D configurator for garment design with integrated demand forecasting
-                                models.</p>
-                            <a href="#" class="project-link magnetic">View Case Study <i
-                                    data-lucide="external-link"></i></a>
+                    <div class="punch-card gsap-reveal tilt-card" data-lang="cpp">
+                        <div class="punch-strip"></div>
+                        <div class="punch-holes"><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="punch-body">
+                            <div class="punch-lang">TOOLS</div>
+                            <h3 class="punch-title">3D Mockup Designer</h3>
+                            <div class="punch-tags"><span class="punch-tag">3D Configurator</span><span class="punch-tag">AI Forecasting</span></div>
+                            <p class="punch-desc">An interactive 3D configurator for garment design with integrated demand forecasting models.</p>
+                            <a href="#" class="punch-link magnetic"><span class="prompt">></span> view_case_study <i data-lucide="external-link" class="btn-icon"></i></a>
                         </div>
                     </div>
 
@@ -285,107 +412,145 @@
 
         <section id="experience">
             <div class="container">
-                <div class="section-header gsap-reveal">
-                    <h2>05. Experience</h2><span class="line"></span>
+                <div class="terminal-prompt trigger-prompt">
+                    <span class="prompt">></span> <span class="cmd">git log --format=full</span>
+                    <span class="cursor-blink prompt-cursor">_</span>
                 </div>
-                <div class="timeline">
-
-                    <div class="timeline-item gsap-reveal left-slide highlight-container glass"
-                        style="padding: 30px; margin-left: 20px; border-left: 4px solid var(--text-primary);">
-                        <h3 class="highlight-title">Robotics and AI Intern</h3>
-                        <h4>iHub School of Learning, Coimbatore &bull; April 2025 – May 2025</h4>
-                        <ul
-                            style="list-style-position: outside; padding-left: 20px; font-size: 1.2rem; color: var(--text-secondary); line-height: 1.6;">
-                            <li
-                                style="margin-bottom: 15px; color: var(--text-primary); font-weight: 600; background: rgba(0,0,0,0.05); padding: 10px 15px; border-radius: 6px; border-left: 4px solid var(--text-primary); list-style-type: none; margin-left: -20px;">
-                                Worked as a freelance AI/ML trainer for 6 months, conducting large-scale technical
-                                seminars and training numerous students across various colleges.</li>
-                            <li style="margin-bottom: 10px;">Engineered sensor data integration pipelines for advanced
-                                robotic control systems.</li>
-                            <li>Developed AI algorithms for real-time object detection and simulated path planning using
-                                ROS.</li>
-                        </ul>
+                <div class="terminal-window gsap-reveal">
+                    <div class="terminal-bar">
+                        <div class="terminal-dots">
+                            <span class="dot-red"></span>
+                            <span class="dot-yellow"></span>
+                            <span class="dot-green"></span>
+                        </div>
+                        <span class="terminal-path">robo@portfolio:~/experience</span>
                     </div>
+                    <div class="terminal-body exp-body">
+                        <div class="git-log">
 
-                    <div class="timeline-item gsap-reveal left-slide highlight-container glass"
-                        style="padding: 30px; margin-left: 20px; border-left: 4px solid var(--text-primary);">
-                        <h3 class="highlight-title">Machine Learning Intern</h3>
-                        <h4>Live Stream Technologies, Coimbatore &bull; October 2024 – November 2024</h4>
-                        <p>Architected and trained machine learning models for predictive analytics. Leveraged CNN and
-                            LSTM for complex image and time-series data processing.</p>
+                            <div class="git-commit">
+                                <div class="git-hash"><span class="git-label">commit</span> <span class="hash-val">a1b2c3d4</span></div>
+                                <div class="git-author"><span class="git-label">Author:</span> Manosakthi Thiyagarajan</div>
+                                <div class="git-date"><span class="git-label">Date:</span> April 2025 &ndash; May 2025</div>
+                                <div class="git-branch"><span class="git-label">Branch:</span> <span class="branch-name">internship</span></div>
+                                <div class="git-msg">
+                                    <div class="msg-title">Robotics and AI Intern</div>
+                                    <div class="msg-org">iHub School of Learning, Coimbatore</div>
+                                </div>
+                                <div class="git-desc">
+                                    <div class="desc-line">&bull; Engineered sensor data integration pipelines for advanced robotic control systems.</div>
+                                    <div class="desc-line">&bull; Developed AI algorithms for real-time object detection and simulated path planning using ROS.</div>
+                                </div>
+                            </div>
+
+                            <div class="git-commit">
+                                <div class="git-hash"><span class="git-label">commit</span> <span class="hash-val">e5f6g7h8</span></div>
+                                <div class="git-author"><span class="git-label">Author:</span> Manosakthi Thiyagarajan</div>
+                                <div class="git-date"><span class="git-label">Date:</span> October 2024 &ndash; November 2024</div>
+                                <div class="git-branch"><span class="git-label">Branch:</span> <span class="branch-name">internship</span></div>
+                                <div class="git-msg">
+                                    <div class="msg-title">Machine Learning Intern</div>
+                                    <div class="msg-org">Live Stream Technologies, Coimbatore</div>
+                                </div>
+                                <div class="git-desc">
+                                    <div class="desc-line">&bull; Architected and trained machine learning models for high-accuracy predictive analytics.</div>
+                                    <div class="desc-line">&bull; Leveraged CNN and LSTM architectures for processing complex image and time-series data.</div>
+                                </div>
+                            </div>
+
+                            <div class="git-commit">
+                                <div class="git-hash"><span class="git-label">commit</span> <span class="hash-val">i9j0k1l2</span></div>
+                                <div class="git-author"><span class="git-label">Author:</span> Manosakthi Thiyagarajan</div>
+                                <div class="git-date"><span class="git-label">Date:</span> June 2024 &ndash; July 2024</div>
+                                <div class="git-branch"><span class="git-label">Branch:</span> <span class="branch-name">internship</span></div>
+                                <div class="git-msg">
+                                    <div class="msg-title">Data Science Intern</div>
+                                    <div class="msg-org">Neha Solutions, Pollachi</div>
+                                </div>
+                                <div class="git-desc">
+                                    <div class="desc-line">&bull; Built robust Python-based data pipelines for end-to-end cleaning and exploratory analysis.</div>
+                                    <div class="desc-line">&bull; Applied regression and classification algorithms to solve predictive modeling challenges.</div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-
-                    <div class="timeline-item gsap-reveal left-slide highlight-container glass"
-                        style="padding: 30px; margin-left: 20px; border-left: 4px solid var(--text-primary);">
-                        <h3 class="highlight-title">Data Science Intern</h3>
-                        <h4>Neha Solutions, Pollachi &bull; June 2024 – July 2024</h4>
-                        <p>Built robust Python data pipelines for cleaning and analysis. Applied
-                            regression/classification algorithms and created interactive data visualizations.</p>
-                    </div>
-
                 </div>
             </div>
         </section>
 
         <section id="contact">
             <div class="container">
-                <div class="section-header gsap-reveal">
-                    <h2>06. Let's Connect</h2><span class="line"></span>
+                <div class="terminal-prompt trigger-prompt">
+                    <span class="prompt">></span> <span class="cmd">python send_message.py --to=robo</span>
+                    <span class="cursor-blink prompt-cursor">_</span>
                 </div>
-                <div class="grid-2">
-                    <div class="gsap-reveal left-slide">
-                        <h3 style="font-size: 2.5rem; margin-bottom: 20px;">Have a project in mind?</h3>
-                        <p style="font-size: 1.2rem; margin-bottom: 40px;">I'm currently open for new opportunities and
-                            interesting collaborations. Feel free to reach out!</p>
+                <div class="contact-grid">
 
-                        <div class="code-font-block" style="font-family: 'Consolas', 'Courier New', monospace; background: var(--bg-secondary); padding: 25px; border-radius: 12px; border: 1px solid var(--glass-border); line-height: 1.8; font-size: 1.1rem; box-shadow: inset 0 0 10px rgba(0,0,0,0.05);">
-                            <div style="display: flex; gap: 15px; flex-wrap: wrap; align-items: center;">
-                                <a href="tel:+919361043465" class="magnetic social-link" style="color: var(--text-primary); text-decoration: underline; text-underline-offset: 4px;">(91+) 9361043465</a> 
-                                <span style="color: var(--text-secondary); font-weight: bold;">|</span> 
-                                <a href="mailto:manot6114@gmail.com" class="magnetic social-link" style="color: var(--text-primary); text-decoration: underline; text-underline-offset: 4px;">manot6114@gmail.com</a>
+                    <div class="terminal-window gsap-reveal">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot-red"></span>
+                                <span class="dot-yellow"></span>
+                                <span class="dot-green"></span>
                             </div>
-                            <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px; align-items: center;">
-                                <a href="https://www.linkedin.com/in/manosakthi-thiyagarajan-5141a51b4" target="_blank" class="magnetic social-link" style="color: var(--text-primary); text-decoration: underline; text-underline-offset: 4px;">LinkedIn</a> 
-                                <span style="color: var(--text-secondary); font-weight: bold;">|</span>
-                                <a href="https://github.com/manosakthi3112" target="_blank" class="magnetic social-link" style="color: var(--text-primary); text-decoration: underline; text-underline-offset: 4px;">GitHub</a> 
-                                <span style="color: var(--text-secondary); font-weight: bold;">|</span>
-                                <a href="https://leetcode.com/u/manot6114" target="_blank" class="magnetic social-link" style="color: var(--text-primary); text-decoration: underline; text-underline-offset: 4px;">LeetCode</a> 
-                                <span style="color: var(--text-secondary); font-weight: bold;">|</span>
-                                <a href="https://manosakthi3112.github.io" target="_blank" class="magnetic social-link" style="color: var(--text-primary); text-decoration: underline; text-underline-offset: 4px;">Portfolio</a>
-                            </div>
-                            <div style="margin-top: 20px; color: var(--text-secondary);">
-                                > 12/190 Sree Selva Ganapathi Nagar, Makkinampatti, Pollachi, 642003
-                            </div>
+                            <span class="terminal-path">robo@portfolio:~/contact</span>
+                        </div>
+                        <div class="terminal-body contact-info-body">
+                            <div class="line"><span class="prompt">></span> <span class="cmd">cat contact_info.txt</span></div>
+                            <div class="line spacer"></div>
+                            <div class="line"><span class="env-var">PHONE</span>=<a href="tel:+919361043465" class="contact-link"><span class="syntax-string">"+91 9361043465"</span></a></div>
+                            <div class="line"><span class="env-var">EMAIL</span>=<a href="mailto:manot6114@gmail.com" class="contact-link"><span class="syntax-string">"manot6114@gmail.com"</span></a></div>
+                            <div class="line"><span class="env-var">LINKEDIN</span>=<a href="https://www.linkedin.com/in/manosakthi-thiyagarajan-5141a51b4" target="_blank" class="contact-link"><span class="syntax-string">"manosakthi-thiyagarajan"</span></a></div>
+                            <div class="line"><span class="env-var">GITHUB</span>=<a href="https://github.com/manosakthi3112" target="_blank" class="contact-link"><span class="syntax-string">"manosakthi3112"</span></a></div>
+                            <div class="line"><span class="env-var">LEETCODE</span>=<a href="https://leetcode.com/u/manot6114" target="_blank" class="contact-link"><span class="syntax-string">"manot6114"</span></a></div>
+                            <div class="line"><span class="env-var">PORTFOLIO</span>=<a href="https://manosakthi3112.github.io" target="_blank" class="contact-link"><span class="syntax-string">"manosakthi3112.github.io"</span></a></div>
+                            <div class="line"><span class="env-var">ADDRESS</span>=<span class="syntax-string">"Pollachi, 642003"</span></div>
                         </div>
                     </div>
-                    <form class="contact-form glass gsap-reveal scale-up" style="padding: 40px;"
-                        onsubmit="event.preventDefault()">
-                        <div class="input-group">
-                            <input type="text" id="name" required>
-                            <label for="name">Your Name</label>
+
+                    <div class="terminal-window gsap-reveal">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot-red"></span>
+                                <span class="dot-yellow"></span>
+                                <span class="dot-green"></span>
+                            </div>
+                            <span class="terminal-path">robo@portfolio:~/contact_form</span>
                         </div>
-                        <div class="input-group">
-                            <input type="email" id="email" required>
-                            <label for="email">Your Email</label>
+                        <div class="terminal-body form-body">
+                            <form class="terminal-form" onsubmit="event.preventDefault()">
+                                <div class="form-line">
+                                    <span class="prompt">></span> <span class="cmd">name</span>
+                                    <input type="text" id="name" required class="terminal-input" placeholder="Enter your name...">
+                                </div>
+                                <div class="form-line">
+                                    <span class="prompt">></span> <span class="cmd">email</span>
+                                    <input type="email" id="email" required class="terminal-input" placeholder="Enter your email...">
+                                </div>
+                                <div class="form-line">
+                                    <span class="prompt">></span> <span class="cmd">message</span>
+                                    <textarea id="message" rows="4" required class="terminal-textarea" placeholder="Type your message..."></textarea>
+                                </div>
+                                <div class="form-line submit-form-line">
+                                    <span class="prompt">></span>
+                                    <button type="submit" class="terminal-submit magnetic">
+                                        ./send_message.sh <i data-lucide="send" class="btn-icon"></i>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="input-group">
-                            <textarea id="message" rows="4" required></textarea>
-                            <label for="message">Your Message</label>
-                        </div>
-                        <button type="submit" class="submit-btn magnetic">Send Message</button>
-                    </form>
+                    </div>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-
-    <script src="app.js?v=2"></script>
+    <script src="app.js?v=3"></script>
 </body>
-
 </html>
