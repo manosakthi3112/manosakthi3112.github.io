@@ -16,13 +16,17 @@
 
     <div class="bg-code">
         <span class="code-snip" style="top:8%;left:3%;transform:rotate(-2deg)">import torch.nn as nn</span>
-        <span class="code-snip" style="top:18%;right:6%;transform:rotate(3deg)">class Model(nn.Module):</span>
-        <span class="code-snip" style="top:32%;left:5%;transform:rotate(-4deg)">int main() { return 0; }</span>
-        <span class="code-snip" style="top:45%;right:4%;transform:rotate(2deg)">#include &lt;iostream&gt;</span>
-        <span class="code-snip" style="top:58%;left:2%;transform:rotate(-1deg)">model.fit(X_train, y_train)</span>
-        <span class="code-snip" style="top:72%;right:8%;transform:rotate(3deg)">std::vector&lt;int&gt; data;</span>
-        <span class="code-snip" style="top:85%;left:6%;transform:rotate(-3deg)">loss.backward()</span>
-        <span class="code-snip" style="top:12%;right:2%;transform:rotate(1deg)">def forward(self, x):</span>
+        <span class="code-snip" style="top:15%;right:5%;transform:rotate(2deg)">from sklearn.metrics import accuracy_score</span>
+        <span class="code-snip" style="top:22%;left:6%;transform:rotate(-3deg)">def train_model(model, data, epochs=100):</span>
+        <span class="code-snip" style="top:30%;right:3%;transform:rotate(1deg)">class NeuralNetwork(nn.Module):</span>
+        <span class="code-snip" style="top:38%;left:4%;transform:rotate(-4deg)">model.compile(optimizer='adam', loss='mse')</span>
+        <span class="code-snip" style="top:46%;right:7%;transform:rotate(3deg)">import numpy as np</span>
+        <span class="code-snip" style="top:54%;left:2%;transform:rotate(-1deg)">X_train, X_test, y_train, y_test = train_test_split(X, y)</span>
+        <span class="code-snip" style="top:62%;right:4%;transform:rotate(2deg)">plt.plot(history.history['loss'])</span>
+        <span class="code-snip" style="top:70%;left:5%;transform:rotate(-3deg)">with torch.no_grad():</span>
+        <span class="code-snip" style="top:78%;right:6%;transform:rotate(1deg)">predictions = model.predict(X_test)</span>
+        <span class="code-snip" style="top:86%;left:3%;transform:rotate(-2deg)">print(f"Accuracy: {acc:.2%}")</span>
+        <span class="code-snip" style="top:93%;right:8%;transform:rotate(3deg)">loss.backward()</span>
     </div>
 
     <div class="cursor-dot"></div>
@@ -38,10 +42,10 @@
                     <span class="dot-yellow"></span>
                     <span class="dot-green"></span>
                 </div>
-                <span class="terminal-path">robo@portfolio:~</span>
+                <span class="terminal-path">pyai@workspace:~</span>
             </div>
             <div class="loader-body">
-                <div class="loader-line"><span class="prompt">></span> <span class="cmd">systemctl start portfolio.service</span></div>
+                <div class="loader-line"><span class="prompt">></span> <span class="cmd">python -m portfolio --init</span></div>
                 <div class="loader-line">
                     <span class="progress">[</span><span class="progress-fill" id="progress-fill"></span><span class="progress">]</span>
                     <span class="progress-pct" id="progress-pct">0%</span>
@@ -54,7 +58,7 @@
     <nav class="terminal-nav" id="navbar">
         <div class="container nav-container">
             <div class="nav-brand">
-                <span class="nav-prompt">robo@portfolio:~$</span>
+                <span class="nav-prompt">pyai@workspace:~$</span>
                 <span class="nav-logo">MT</span>
                 <span class="cursor-blink" id="nav-cursor">_</span>
             </div>
@@ -84,21 +88,22 @@
                             <span class="dot-yellow"></span>
                             <span class="dot-green"></span>
                         </div>
-                        <span class="terminal-path">robo@portfolio:~/hero</span>
+                        <span class="terminal-path">pyai@workspace:~/hero</span>
                         <span class="terminal-action">✕</span>
                     </div>
                     <div class="terminal-body hero-body">
-                        <div class="hero-line"><span class="prompt">></span> <span class="cmd">whoami</span></div>
+                        <div class="hero-line"><span class="prompt">&gt;&gt;&gt;</span> <span class="cmd">import manosakthi as dev</span></div>
                         <div class="hero-line output name-highlight"><span class="syntax-string">Manosakthi Thiyagarajan</span></div>
-                        <div class="hero-line"><span class="prompt">></span> <span class="cmd">cat title.txt</span></div>
-                        <div class="hero-line output title-line"><span class="syntax-var">Architecting Intelligent Systems</span></div>
+                        <div class="hero-line"><span class="prompt">&gt;&gt;&gt;</span> <span class="cmd">dev.role</span></div>
+                        <div class="hero-line output title-line"><span class="syntax-var">'Architecting Intelligent Systems'</span></div>
+                        <div class="hero-line"><span class="prompt">&gt;&gt;&gt;</span> <span class="cmd">dev.tagline</span></div>
                         <div class="hero-line output tagline-line">
-                            <span class="syntax-comment"># </span><span id="typed-text"></span><span class="cursor-blink hero-cursor">▊</span>
+                            <span class="syntax-string">'</span><span id="typed-text"></span><span class="syntax-string">'</span><span class="cursor-blink hero-cursor">▊</span>
                         </div>
                         <div class="hero-line cta-line">
-                            <span class="prompt">></span>
+                            <span class="prompt">&gt;&gt;&gt;</span>
                             <a href="#projects" class="cmd-btn magnetic">
-                                ./explore --target=projects <i data-lucide="arrow-right" class="btn-icon"></i>
+                                dev.explore() <i data-lucide="arrow-right" class="btn-icon"></i>
                             </a>
                         </div>
                         <div class="circuit-corner tl"></div>
@@ -123,7 +128,7 @@
                             <span class="dot-yellow"></span>
                             <span class="dot-green"></span>
                         </div>
-                        <span class="terminal-path">robo@portfolio:~/about</span>
+                        <span class="terminal-path">pyai@workspace:~/about</span>
                     </div>
                     <div class="terminal-body about-body">
                         <div class="line"><span class="syntax-comment"># About Me</span></div>
@@ -142,7 +147,7 @@
         <section id="skills">
             <div class="container">
                 <div class="terminal-prompt trigger-prompt">
-                    <span class="prompt">></span> <span class="cmd">ls /skills/ --tree</span>
+                    <span class="prompt">></span> <span class="cmd">pip list --format=tree</span>
                     <span class="cursor-blink prompt-cursor">_</span>
                 </div>
                 <div class="terminal-window gsap-reveal">
@@ -152,7 +157,7 @@
                             <span class="dot-yellow"></span>
                             <span class="dot-green"></span>
                         </div>
-                        <span class="terminal-path">robo@portfolio:~/skills</span>
+                        <span class="terminal-path">pyai@workspace:~/skills</span>
                     </div>
                     <div class="terminal-body skills-body">
                         <div class="skills-schematic">
@@ -239,7 +244,7 @@
                             <span class="dot-yellow"></span>
                             <span class="dot-green"></span>
                         </div>
-                        <span class="terminal-path">robo@portfolio:~/education</span>
+                        <span class="terminal-path">pyai@workspace:~/education</span>
                     </div>
                     <div class="terminal-body edu-body">
                         <div class="edu-card">
@@ -257,7 +262,7 @@
         <section id="projects">
             <div class="container">
                 <div class="terminal-prompt trigger-prompt">
-                    <span class="prompt">></span> <span class="cmd">ls projects/ --format=punch</span>
+                    <span class="prompt">></span> <span class="cmd">jupyter lab projects.ipynb</span>
                     <span class="cursor-blink prompt-cursor">_</span>
                 </div>
                 <div class="projects-grid">
@@ -413,7 +418,7 @@
         <section id="experience">
             <div class="container">
                 <div class="terminal-prompt trigger-prompt">
-                    <span class="prompt">></span> <span class="cmd">git log --format=full</span>
+                    <span class="prompt">></span> <span class="cmd">git log --format=full --oneline</span>
                     <span class="cursor-blink prompt-cursor">_</span>
                 </div>
                 <div class="terminal-window gsap-reveal">
@@ -423,7 +428,7 @@
                             <span class="dot-yellow"></span>
                             <span class="dot-green"></span>
                         </div>
-                        <span class="terminal-path">robo@portfolio:~/experience</span>
+                        <span class="terminal-path">pyai@workspace:~/experience</span>
                     </div>
                     <div class="terminal-body exp-body">
                         <div class="git-log">
@@ -482,7 +487,7 @@
         <section id="contact">
             <div class="container">
                 <div class="terminal-prompt trigger-prompt">
-                    <span class="prompt">></span> <span class="cmd">python send_message.py --to=robo</span>
+                    <span class="prompt">></span> <span class="cmd">python send_message.py --to=pyai</span>
                     <span class="cursor-blink prompt-cursor">_</span>
                 </div>
                 <div class="contact-grid">
@@ -494,7 +499,7 @@
                                 <span class="dot-yellow"></span>
                                 <span class="dot-green"></span>
                             </div>
-                            <span class="terminal-path">robo@portfolio:~/contact</span>
+                            <span class="terminal-path">pyai@workspace:~/contact</span>
                         </div>
                         <div class="terminal-body contact-info-body">
                             <div class="line"><span class="prompt">></span> <span class="cmd">cat contact_info.txt</span></div>
@@ -516,7 +521,7 @@
                                 <span class="dot-yellow"></span>
                                 <span class="dot-green"></span>
                             </div>
-                            <span class="terminal-path">robo@portfolio:~/contact_form</span>
+                            <span class="terminal-path">pyai@workspace:~/contact_form</span>
                         </div>
                         <div class="terminal-body form-body">
                             <form class="terminal-form" onsubmit="event.preventDefault()">

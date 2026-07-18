@@ -99,10 +99,10 @@ const progressPct = document.getElementById('progress-pct');
 const statusLine = document.getElementById('status-line');
 
 const statuses = [
-    'Initializing kernel modules...',
-    'Loading portfolio assets...',
-    'Compiling experience data...',
-    'Rendering project cards...',
+    'importing torch, numpy, sklearn...',
+    'loading portfolio modules...',
+    'compiling experience datasets...',
+    'training project models...',
     'Ready.'
 ];
 
@@ -301,9 +301,9 @@ particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3
 
 const particlesMaterial = new THREE.PointsMaterial({
     size: 1.8,
-    color: 0x33ff77,
+    color: 0x3776AB,
     transparent: true,
-    opacity: 0.6,
+    opacity: 0.5,
     blending: THREE.AdditiveBlending,
 });
 
@@ -311,9 +311,9 @@ const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
 scene.add(particlesMesh);
 
 const lineMaterial = new THREE.LineBasicMaterial({
-    color: 0x33ff77,
+    color: 0xFFD43B,
     transparent: true,
-    opacity: 0.08,
+    opacity: 0.06,
     blending: THREE.AdditiveBlending,
 });
 

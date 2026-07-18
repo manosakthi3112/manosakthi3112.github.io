@@ -2,8 +2,8 @@
     --bg-primary: #0a0e14;
     --bg-secondary: #0d1117;
     --bg-terminal: #0d1117;
-    --text-primary: #b3b1ad;
-    --text-secondary: #626a73;
+    --text-primary: #e8e8e8;
+    --text-secondary: #a0a8b0;
     --accent-green: #33ff77;
     --accent-amber: #ffb000;
     --syntax-purple: #c792ea;
@@ -28,6 +28,8 @@
     --punch-strip-ai: #33ff77;
     --punch-strip-cpp: #c792ea;
     --card-shadow: rgba(51, 255, 119, 0.08);
+    --python-blue: #3776AB;
+    --python-yellow: #FFD43B;
 }
 
 * {
@@ -44,8 +46,8 @@ html, body {
     font-family: 'JetBrains Mono', 'Consolas', 'Courier New', monospace;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.7;
 }
 
 ::-webkit-scrollbar { width: 6px; }
@@ -226,8 +228,8 @@ section {
 
 .terminal-body {
     padding: 28px 24px;
-    font-size: 0.95rem;
-    line-height: 1.7;
+    font-size: 1.05rem;
+    line-height: 1.8;
 }
 
 /* TERMINAL PROMPT (section intro) */
@@ -236,7 +238,7 @@ section {
     align-items: center;
     gap: 8px;
     margin-bottom: 20px;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-family: 'VT323', monospace;
     color: var(--text-primary);
 }
@@ -380,24 +382,24 @@ section {
 
 .nav-prompt {
     color: var(--text-secondary);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
 }
 
 .nav-logo {
     color: var(--accent-green);
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     letter-spacing: 0.1em;
     text-shadow: 0 0 8px rgba(51, 255, 119, 0.3);
 }
 
 #nav-cursor {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
 
 .nav-links {
     display: flex;
-    gap: 6px;
+    gap: 10px;
     align-items: center;
     list-style: none;
 }
@@ -405,15 +407,15 @@ section {
 .nav-link {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.78rem;
+    font-size: 0.9rem;
     font-family: 'JetBrains Mono', monospace;
-    padding: 6px 12px;
+    padding: 8px 16px;
     border: 1px solid transparent;
     border-radius: 4px;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
 }
 
 .nav-link:hover {
@@ -424,8 +426,8 @@ section {
 }
 
 .nav-link svg {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
 }
 
 .resume-link {
@@ -498,14 +500,19 @@ section {
 
 .name-highlight .syntax-string {
     color: var(--accent-green);
-    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
     font-weight: 700;
-    text-shadow: 0 0 20px rgba(51, 255, 119, 0.2);
+    text-shadow: 0 0 25px rgba(51, 255, 119, 0.3);
 }
 
 .title-line .syntax-var {
     color: var(--syntax-var);
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+}
+
+#typed-text {
+    color: var(--text-primary);
+    font-size: 1.1rem;
 }
 
 .tagline-line .syntax-comment {
@@ -584,7 +591,7 @@ section {
 
 .about-body .text-line {
     color: var(--text-primary);
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     line-height: 1.8;
 }
 
@@ -659,10 +666,10 @@ section {
 }
 
 .skill-chip {
-    padding: 6px 14px;
+    padding: 8px 18px;
     border: 1px solid var(--terminal-border);
     border-radius: 3px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-family: 'JetBrains Mono', monospace;
     color: var(--text-secondary);
     background: rgba(255,255,255,0.02);
@@ -767,7 +774,7 @@ section {
 
 .punch-title {
     font-family: 'VT323', monospace;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: var(--text-primary);
     margin-bottom: 10px;
     letter-spacing: 0.02em;
@@ -791,9 +798,9 @@ section {
 }
 
 .punch-desc {
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.7;
     margin-bottom: 18px;
 }
 
@@ -857,32 +864,32 @@ section {
 
 .git-label {
     color: var(--syntax-purple);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .hash-val {
     color: var(--syntax-var);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-family: 'JetBrains Mono', monospace;
 }
 
 .git-author, .git-date {
     color: var(--text-secondary);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-top: 2px;
 }
 
 .git-branch {
     margin-top: 2px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .branch-name {
     color: var(--syntax-orange);
     background: rgba(247, 140, 108, 0.08);
-    padding: 1px 8px;
+    padding: 2px 10px;
     border-radius: 2px;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
 }
 
 .git-msg {
@@ -896,14 +903,14 @@ section {
 
 .msg-title {
     color: var(--text-primary);
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 2px;
 }
 
 .msg-org {
     color: var(--text-secondary);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .git-desc {
@@ -913,7 +920,7 @@ section {
 
 .desc-line {
     color: var(--text-secondary);
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     line-height: 1.7;
     padding: 2px 0;
 }
@@ -931,7 +938,7 @@ section {
 
 .contact-info-body .line {
     margin-bottom: 6px;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
 }
 
 .contact-info-body .spacer {
@@ -972,15 +979,15 @@ section {
 
 .form-line .prompt {
     color: var(--accent-green);
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 2.2;
 }
 
 .form-line .cmd {
     color: var(--syntax-cyan);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     line-height: 2.2;
-    min-width: 70px;
+    min-width: 80px;
 }
 
 .terminal-input, .terminal-textarea {
@@ -989,10 +996,10 @@ section {
     background: rgba(255,255,255,0.03);
     border: 1px solid var(--terminal-border);
     border-radius: 4px;
-    padding: 10px 14px;
+    padding: 12px 16px;
     color: var(--text-primary);
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
     outline: none;
 }
@@ -1068,7 +1075,7 @@ section {
 
 @media(max-width: 768px) {
     section {
-        padding: 70px 0;
+        padding: 60px 0;
     }
 
     .nav-links {
@@ -1080,8 +1087,8 @@ section {
         background: rgba(10, 14, 20, 0.98);
         border-bottom: 1px solid var(--terminal-border);
         flex-direction: column;
-        padding: 16px 5%;
-        gap: 4px;
+        padding: 20px 5%;
+        gap: 8px;
     }
 
     .nav-links.open {
@@ -1089,8 +1096,14 @@ section {
     }
 
     .nav-link {
-        padding: 10px 16px;
+        padding: 14px 16px;
+        font-size: 0.9rem;
         width: 100%;
+    }
+
+    .nav-link svg {
+        width: 18px;
+        height: 18px;
     }
 
     .nav-toggle {
@@ -1098,7 +1111,8 @@ section {
     }
 
     .nav-prompt {
-        display: none;
+        display: flex;
+        font-size: 0.9rem;
     }
 
     .terminal-body {
@@ -1107,6 +1121,23 @@ section {
 
     .hero-body {
         padding: 24px 16px;
+    }
+
+    .hero-line .prompt,
+    .hero-line .cmd {
+        font-size: 0.9rem;
+    }
+
+    .name-highlight .syntax-string {
+        font-size: clamp(1.3rem, 5vw, 1.8rem);
+    }
+
+    .title-line .syntax-var {
+        font-size: clamp(1rem, 4vw, 1.3rem);
+    }
+
+    .tagline-line {
+        font-size: 0.9rem;
     }
 
     .skill-group {
@@ -1128,11 +1159,15 @@ section {
     }
 
     .terminal-prompt {
-        font-size: 0.95rem;
+        font-size: 1rem;
     }
 
     .git-commit {
         padding-left: 14px;
+    }
+
+    .git-label, .hash-val {
+        font-size: 0.8rem;
     }
 
     .form-line {
@@ -1145,6 +1180,7 @@ section {
 
     .terminal-input, .terminal-textarea {
         min-width: 100%;
+        font-size: 16px;
     }
 
     .edu-card .line {
@@ -1153,6 +1189,113 @@ section {
 
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .punch-card {
+        padding: 18px;
+    }
+
+    .punch-title {
+        font-size: 1.2rem;
+    }
+
+    .punch-desc {
+        font-size: 0.85rem;
+    }
+
+    .skill-chip {
+        font-size: 0.8rem;
+        padding: 8px 14px;
+    }
+
+    .git-msg {
+        padding: 10px 14px;
+    }
+
+    .msg-title {
+        font-size: 0.95rem;
+    }
+
+    .msg-desc {
+        font-size: 0.8rem;
+    }
+
+    .contact-info-body .line {
+        font-size: 0.85rem;
+    }
+
+    .terminal-container {
+        margin: 0 8px;
+    }
+
+    .submit-form-line .cmd-btn {
+        font-size: 0.85rem;
+        padding: 10px 18px;
+    }
+}
+
+@media(max-width: 480px) {
+    section {
+        padding: 40px 0;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .hero-body {
+        padding: 20px 12px;
+    }
+
+    .terminal-body {
+        padding: 16px 12px;
+    }
+
+    .name-highlight .syntax-string {
+        font-size: clamp(1.1rem, 6vw, 1.4rem);
+    }
+
+    .title-line .syntax-var {
+        font-size: clamp(0.9rem, 5vw, 1.1rem);
+    }
+
+    .hero-line .prompt,
+    .hero-line .cmd {
+        font-size: 0.8rem;
+    }
+
+    .nav-brand {
+        font-size: 0.85rem;
+    }
+
+    .nav-links {
+        padding: 16px 4%;
+    }
+
+    .nav-link {
+        padding: 12px 14px;
+        font-size: 0.85rem;
+    }
+
+    .nav-prompt {
+        display: none;
+    }
+
+    .education-grid {
+        gap: 8px;
+    }
+
+    .projects-grid {
+        gap: 10px;
+    }
+
+    .punch-tags {
+        gap: 4px;
+    }
+
+    .punch-tag {
+        font-size: 0.7rem;
+        padding: 2px 8px;
     }
 }
 
