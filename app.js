@@ -21,10 +21,12 @@ const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matc
 let lenis = null;
 if (typeof Lenis !== 'undefined' && !prefersReduced) {
     lenis = new Lenis({
-        duration: 1.1,
+        duration: 1.4,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smoothWheel: true,
-        smoothTouch: false,
+        smoothTouch: true,
+        touchMultiplier: 1.8,
+        wheelMultiplier: 1.1,
     });
     function rafLenis(time) {
         lenis.raf(time);
@@ -83,34 +85,13 @@ const cursorReticle = document.querySelector('.cursor-reticle');
 if (finePointer && cursorDot && cursorReticle) {
     document.body.classList.add('cursor-active');
 
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let reticleX = mouseX, reticleY = mouseY;
-    let needsFrame = false;
-
     window.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        /* dot tracks the pointer 1:1 each event */
-        cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-        if (!needsFrame) {
-            needsFrame = true;
-            requestAnimationFrame(stepCursor);
-        }
+        const x = e.clientX;
+        const y = e.clientY;
+        /* Instant 1:1 tracking at native hardware mouse speed */
+        cursorDot.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        cursorReticle.style.transform = `translate3d(${x}px, ${y}px, 0)`;
     }, { passive: true });
-
-    function stepCursor() {
-        /* ease the reticle toward the pointer */
-        reticleX += (mouseX - reticleX) * 0.22;
-        reticleY += (mouseY - reticleY) * 0.22;
-        cursorReticle.style.transform = `translate(${reticleX}px, ${reticleY}px)`;
-        needsFrame = false;
-        /* keep easing until it settles, to avoid a snapped stop */
-        if (Math.abs(mouseX - reticleX) > 0.5 || Math.abs(mouseY - reticleY) > 0.5) {
-            needsFrame = true;
-            requestAnimationFrame(stepCursor);
-        }
-    }
 
     /* hide custom cursor when the window loses focus / leaves */
     document.addEventListener('mouseleave', () => {
@@ -132,13 +113,13 @@ magnetic.forEach((el) => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => {
         document.body.classList.remove('cursor-hover');
-        gsap.to(el, { x: 0, y: 0, duration: 0.7, ease: 'elastic.out(1, 0.3)' });
+        gsap.to(el, { x: 0, y: 0, duration: 0.4, ease: 'power2.out' });
     });
     el.addEventListener('mousemove', (e) => {
         const rect = el.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-        gsap.to(el, { x: x * 0.25, y: y * 0.35, duration: 0.4, ease: 'power2.out' });
+        gsap.to(el, { x: x * 0.18, y: y * 0.22, duration: 0.2, ease: 'power2.out' });
     });
 });
 
@@ -155,8 +136,8 @@ tiltCards.forEach((card) => {
         const px = (e.clientX - rect.left - cx) / cx;
         const py = (e.clientY - rect.top - cy) / cy;
         gsap.to(card, {
-            rotateY: px * 8,
-            rotateX: -py * 8,
+            rotateY: px * 3,
+            rotateX: -py * 3,
             transformPerspective: 1000,
             duration: 0.5,
             ease: 'power2.out',
@@ -511,11 +492,48 @@ function setupCursorParallax() {
 /* =========================================================
    NAV: hide on scroll-down, show on scroll-up + active link
    ========================================================= */
+function setupSmoothAnchors() {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', (e) => {
+            const href = anchor.getAttribute('href');
+            if (!href || href === '#') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                if (lenis) {
+                    lenis.scrollTo(target, { offset: -76, duration: 1.2 });
+                } else {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+}
+
 function setupNav() {
     const nav = document.getElementById('nav');
     const navLinks = document.getElementById('navLinks');
     const navToggle = document.getElementById('navToggle');
     let lastY = window.scrollY;
+
+    /* create mobile nav backdrop */
+    let backdrop = document.querySelector('.nav-backdrop');
+    if (!backdrop) {
+        backdrop = document.createElement('div');
+        backdrop.className = 'nav-backdrop';
+        document.body.appendChild(backdrop);
+    }
+
+    function closeMobileMenu() {
+        if (!navLinks) return;
+        navLinks.classList.remove('open');
+        if (navToggle) {
+            navToggle.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+        backdrop.classList.remove('open');
+        document.body.style.overflow = '';
+    }
 
     window.addEventListener('scroll', () => {
         const y = window.scrollY;
@@ -546,18 +564,17 @@ function setupNav() {
     });
 
     /* mobile toggle */
-    if (navToggle) {
+    if (navToggle && navLinks) {
         navToggle.addEventListener('click', () => {
             const open = navLinks.classList.toggle('open');
             navToggle.classList.toggle('open', open);
             navToggle.setAttribute('aria-expanded', String(open));
+            backdrop.classList.toggle('open', open);
+            document.body.style.overflow = open ? 'hidden' : '';
         });
+        backdrop.addEventListener('click', closeMobileMenu);
         navLinks.querySelectorAll('a').forEach((a) => {
-            a.addEventListener('click', () => {
-                navLinks.classList.remove('open');
-                navToggle.classList.remove('open');
-                navToggle.setAttribute('aria-expanded', 'false');
-            });
+            a.addEventListener('click', closeMobileMenu);
         });
     }
 }
@@ -664,6 +681,7 @@ window.addEventListener('load', async () => {
     setupScrollParallax();
     setupCursorParallax();
     setupNav();
+    setupSmoothAnchors();
     setupProjectFilter();
     setupContactForm();
     setupHeroScope();
